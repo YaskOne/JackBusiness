@@ -12,7 +12,6 @@
 		D771434520EF777B0025E081 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D771434420EF777B0025E081 /* Podfile */; };
 		D771434D20EF8A9B0025E081 /* AddressSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771434C20EF8A9B0025E081 /* AddressSelectViewController.swift */; };
 		D771435420EFA8270025E081 /* JKMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771435320EFA8270025E081 /* JKMediator.swift */; };
-		D771435720EFAAB90025E081 /* JKKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771435620EFAAB90025E081 /* JKKeys.swift */; };
 		D771435920F006800025E081 /* CreateBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771435820F006800025E081 /* CreateBusinessViewController.swift */; };
 		D771436420F0CF700025E081 /* Jack_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D771435E20F0CF6F0025E081 /* Jack_logo.png */; };
 		D771436520F0CF700025E081 /* Jack_logo_main.png in Resources */ = {isa = PBXBuildFile; fileRef = D771435F20F0CF700025E081 /* Jack_logo_main.png */; };
@@ -31,9 +30,27 @@
 		D7CB808020EE444300F69E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */; };
 		D7CB808B20EE444400F69E54 /* JackBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB808A20EE444400F69E54 /* JackBusinessTests.swift */; };
 		D7CB809620EE444400F69E54 /* JackBusinessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB809520EE444400F69E54 /* JackBusinessUITests.swift */; };
+		D7F8820820F34FB900B2F7EE /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D767ECEC20F34F270059A370 /* JackModel.framework */; };
+		D7F8820920F34FB900B2F7EE /* JackModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D767ECEC20F34F270059A370 /* JackModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7F8821620F356E500B2F7EE /* JKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8821520F356E500B2F7EE /* JKSession.swift */; };
+		D7F8821820F3A2B800B2F7EE /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8821720F3A2B700B2F7EE /* BusinessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D767ECEB20F34F270059A370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D767ECE620F34F260059A370 /* JackModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D767ECC220F34E7F0059A370;
+			remoteInfo = JackModel;
+		};
+		D767ECED20F34F270059A370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D767ECE620F34F260059A370 /* JackModel.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D767ECCB20F34E7F0059A370;
+			remoteInfo = JackModelTests;
+		};
 		D7C00FB220EE950000072A54 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */;
@@ -69,6 +86,13 @@
 			remoteGlobalIDString = D7CB807120EE444100F69E54;
 			remoteInfo = JackBusiness;
 		};
+		D7F8820A20F34FB900B2F7EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D767ECE620F34F260059A370 /* JackModel.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D767ECC120F34E7F0059A370;
+			remoteInfo = JackModel;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +103,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D7C00FBA20EE96F000072A54 /* ArtUtilities.framework in Embed Frameworks */,
+				D7F8820920F34FB900B2F7EE /* JackModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,11 +114,11 @@
 		28B5912BE7388F50065B12C6 /* Pods_JackBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JackBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41824ED7AA3413D4A2E20053 /* Pods-JackBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JackBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness.release.xcconfig"; sourceTree = "<group>"; };
 		D011614BD4A6636151760CA4 /* Pods-JackBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JackBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness.debug.xcconfig"; sourceTree = "<group>"; };
+		D767ECE620F34F260059A370 /* JackModel.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JackModel.xcodeproj; path = ../JackModel/JackModel.xcodeproj; sourceTree = "<group>"; };
 		D771434120EF77440025E081 /* JKNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKNetwork.swift; sourceTree = "<group>"; };
 		D771434420EF777B0025E081 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D771434C20EF8A9B0025E081 /* AddressSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectViewController.swift; sourceTree = "<group>"; };
 		D771435320EFA8270025E081 /* JKMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKMediator.swift; sourceTree = "<group>"; };
-		D771435620EFAAB90025E081 /* JKKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKKeys.swift; sourceTree = "<group>"; };
 		D771435820F006800025E081 /* CreateBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBusinessViewController.swift; sourceTree = "<group>"; };
 		D771435E20F0CF6F0025E081 /* Jack_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jack_logo.png; sourceTree = "<group>"; };
 		D771435F20F0CF700025E081 /* Jack_logo_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jack_logo_main.png; sourceTree = "<group>"; };
@@ -116,6 +141,8 @@
 		D7CB809120EE444400F69E54 /* JackBusinessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JackBusinessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CB809520EE444400F69E54 /* JackBusinessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackBusinessUITests.swift; sourceTree = "<group>"; };
 		D7CB809720EE444400F69E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7F8821520F356E500B2F7EE /* JKSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKSession.swift; sourceTree = "<group>"; };
+		D7F8821720F3A2B700B2F7EE /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F8820820F34FB900B2F7EE /* JackModel.framework in Frameworks */,
 				D7C00FB920EE96F000072A54 /* ArtUtilities.framework in Frameworks */,
 				1459500005C65842AC5870F6 /* Pods_JackBusiness.framework in Frameworks */,
 			);
@@ -156,16 +184,19 @@
 		D767ECB520F34BC50059A370 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D767ECB720F34BCC0059A370 /* Data */,
+				D7F8821520F356E500B2F7EE /* JKSession.swift */,
+				D7F8821720F3A2B700B2F7EE /* BusinessViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		D767ECB720F34BCC0059A370 /* Data */ = {
+		D767ECE720F34F260059A370 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				D767ECEC20F34F270059A370 /* JackModel.framework */,
+				D767ECEE20F34F270059A370 /* JackModelTests.xctest */,
 			);
-			path = Data;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		D771434020EF77370025E081 /* Network */ = {
@@ -173,7 +204,6 @@
 			children = (
 				D771434120EF77440025E081 /* JKNetwork.swift */,
 				D771435320EFA8270025E081 /* JKMediator.swift */,
-				D771435620EFAAB90025E081 /* JKKeys.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -212,6 +242,7 @@
 		D7CB806920EE444100F69E54 = {
 			isa = PBXGroup;
 			children = (
+				D767ECE620F34F260059A370 /* JackModel.xcodeproj */,
 				D771434420EF777B0025E081 /* Podfile */,
 				D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */,
 				D7CB807420EE444100F69E54 /* JackBusiness */,
@@ -297,6 +328,7 @@
 			);
 			dependencies = (
 				D7C00FBC20EE96F000072A54 /* PBXTargetDependency */,
+				D7F8820B20F34FB900B2F7EE /* PBXTargetDependency */,
 			);
 			name = JackBusiness;
 			productName = JackBusiness;
@@ -378,6 +410,10 @@
 					ProductGroup = D7C00FAE20EE950000072A54 /* Products */;
 					ProjectRef = D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */;
 				},
+				{
+					ProductGroup = D767ECE720F34F260059A370 /* Products */;
+					ProjectRef = D767ECE620F34F260059A370 /* JackModel.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -389,6 +425,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		D767ECEC20F34F270059A370 /* JackModel.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = JackModel.framework;
+			remoteRef = D767ECEB20F34F270059A370 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D767ECEE20F34F270059A370 /* JackModelTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = JackModelTests.xctest;
+			remoteRef = D767ECED20F34F270059A370 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D7C00FB320EE950000072A54 /* ArtUtilities.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -510,11 +560,12 @@
 			files = (
 				D771434220EF77440025E081 /* JKNetwork.swift in Sources */,
 				D7CB807820EE444200F69E54 /* ViewController.swift in Sources */,
+				D7F8821820F3A2B800B2F7EE /* BusinessViewController.swift in Sources */,
 				D7CB807620EE444100F69E54 /* AppDelegate.swift in Sources */,
 				D771435420EFA8270025E081 /* JKMediator.swift in Sources */,
-				D771435720EFAAB90025E081 /* JKKeys.swift in Sources */,
 				D771435920F006800025E081 /* CreateBusinessViewController.swift in Sources */,
 				D771434D20EF8A9B0025E081 /* AddressSelectViewController.swift in Sources */,
+				D7F8821620F356E500B2F7EE /* JKSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +603,11 @@
 			isa = PBXTargetDependency;
 			target = D7CB807120EE444100F69E54 /* JackBusiness */;
 			targetProxy = D7CB809220EE444400F69E54 /* PBXContainerItemProxy */;
+		};
+		D7F8820B20F34FB900B2F7EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JackModel;
+			targetProxy = D7F8820A20F34FB900B2F7EE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

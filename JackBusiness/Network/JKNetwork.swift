@@ -49,6 +49,7 @@ class JKNetwork {
 //                    print(json["places"][0]["CreatedAt"])
                     success(json)
                 } catch {
+                    
                 }
             }
         

@@ -15,6 +15,7 @@ enum RegisterBusinessFormField: Int {
     case address
     case type
     case description
+    case url
 }
 
 class CreateBusinessViewController: UIViewController {
@@ -23,17 +24,20 @@ class CreateBusinessViewController: UIViewController {
     @IBOutlet weak var addressLabel: AFormLabel!
     @IBOutlet weak var typeLabel: AFormLabel!
     @IBOutlet weak var descriptionLabel: AFormLabel!
+    @IBOutlet weak var urlLabel: AFormLabel!
     
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var addressInput: UITextField!
     @IBOutlet weak var typeInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextField!
+    @IBOutlet weak var urlInput: UITextField!
     
     var formFields: [RegisterBusinessFormField: AFormField] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Validate", style: .plain, target: self, action: #selector(validateTapped))
         
         formFields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
@@ -45,6 +49,7 @@ class CreateBusinessViewController: UIViewController {
         formFields[.type] = AFormField(input: typeInput, label: typeLabel, defaultValue: "") {
             return self.typeInput.text != "" ? FormStatus.valid : FormStatus.invalid
         }
+        formFields[.url] = AFormField(input: urlInput, label: urlLabel, defaultValue: "", mandatory: false)
         formFields[.description] = AFormField(input: descriptionInput, label: descriptionLabel, defaultValue: "", mandatory: false)
     }
 
@@ -68,7 +73,7 @@ class CreateBusinessViewController: UIViewController {
             }
         }
         
-        JKMediator.createBusiness(name: nameInput.text!, address: addressInput.text!, type: typeInput.text!, description: descriptionInput.text!, success: { (id) in
+        JKMediator.createBusiness(name: nameInput.text!, address: addressInput.text!, type: typeInput.text!, url: urlInput.text!, description: descriptionInput.text!, success: { (id) in
             self.navigationController?.popViewController(animated: true)
         }, failure: {
             

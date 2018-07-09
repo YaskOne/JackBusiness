@@ -20,7 +20,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         JKNetwork.shared.server = "http://127.0.0.1:8080"
-        GMSServices.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
+//        GMSServices.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,18 +35,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-
-        JKNetwork.shared.query(path: "business", method: .get, skipLog: false, parameters: nil, success: {_ in
-            
-        }, failure: {})
     }
     
     @IBAction func createBusinessTapped(_ sender: Any) {
     }
 
     @IBAction func loginBusiness(_ sender: Any) {
-        if let id = Int(businessIdText.text!) {
-            JKMediator.fetchBusiness(ids: [id], success: {}, failure: {})
+        if let text = businessIdText.text, let id = Int(text) {
+            JKMediator.fetchBusiness(ids: [id], success: { businesses in
+                JKSession.shared.business = businesses[0]
+                print("JKSession : \(businesses[0].id)")
+                
+                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BusinessViewController") as? BusinessViewController
+                self.navigationController?.pushViewController(vc!, animated: true)
+            }, failure: {})
         }
     }
 }
