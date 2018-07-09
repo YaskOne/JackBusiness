@@ -1,0 +1,68 @@
+CONVERT .png IMAGES IN FOLDER images - Source Res : @x3
+CREATE TARGET FOLDER assets
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_AllCells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_AllCells@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_AllCells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_AllCells@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_AllCells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_AllCells.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Back.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Back@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Back.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Back@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Back.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Back.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_CellInfo.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_CellInfo@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_CellInfo.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_CellInfo@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_CellInfo.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_CellInfo.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Cells@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Cells@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Cells.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells_Colony.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Cells_Colony@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells_Colony.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Cells_Colony@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells_Colony.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Cells_Colony.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells_User.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Cells_User@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells_User.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Cells_User@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Cells_User.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Cells_User.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Drop.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Drop@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Drop.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Drop@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Drop.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Drop.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Menu.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Menu@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Menu.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Menu@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Menu.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Menu.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Refresh.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_Refresh@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Refresh.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_Refresh@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_Refresh.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_Refresh.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_UserCells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_UserCells@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_UserCells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_UserCells@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_UserCells.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_UserCells.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_UserLocation.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@3x/Icon_UserLocation@3x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_UserLocation.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@2x/Icon_UserLocation@2x.png
+/Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/images/Icon_UserLocation.png
+  /Users/moose/Documents/MooseFactory/jack/ios/Apps/Jack_iOS/Design/IconsGeneration/assets/@1x/Icon_UserLocation.png

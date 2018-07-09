@@ -1,0 +1,858 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1459500005C65842AC5870F6 /* Pods_JackBusiness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B5912BE7388F50065B12C6 /* Pods_JackBusiness.framework */; };
+		D771434220EF77440025E081 /* JKNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771434120EF77440025E081 /* JKNetwork.swift */; };
+		D771434520EF777B0025E081 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = D771434420EF777B0025E081 /* Podfile */; };
+		D771434D20EF8A9B0025E081 /* AddressSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771434C20EF8A9B0025E081 /* AddressSelectViewController.swift */; };
+		D771435420EFA8270025E081 /* JKMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771435320EFA8270025E081 /* JKMediator.swift */; };
+		D771435720EFAAB90025E081 /* JKKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771435620EFAAB90025E081 /* JKKeys.swift */; };
+		D771435920F006800025E081 /* CreateBusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D771435820F006800025E081 /* CreateBusinessViewController.swift */; };
+		D771436420F0CF700025E081 /* Jack_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D771435E20F0CF6F0025E081 /* Jack_logo.png */; };
+		D771436520F0CF700025E081 /* Jack_logo_main.png in Resources */ = {isa = PBXBuildFile; fileRef = D771435F20F0CF700025E081 /* Jack_logo_main.png */; };
+		D771436620F0CF700025E081 /* Jack_logo_main@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D771436020F0CF700025E081 /* Jack_logo_main@2x.png */; };
+		D771436720F0CF700025E081 /* Jack_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D771436120F0CF700025E081 /* Jack_logo@2x.png */; };
+		D771436820F0CF700025E081 /* Jack_logo_main@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D771436220F0CF700025E081 /* Jack_logo_main@3x.png */; };
+		D771436920F0CF700025E081 /* Jack_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D771436320F0CF700025E081 /* Jack_logo@3x.png */; };
+		D771436B20F0CF760025E081 /* jackfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D771436A20F0CF750025E081 /* jackfont.ttf */; };
+		D771436C20F0F60D0025E081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807520EE444100F69E54 /* AppDelegate.swift */; };
+		D7C00FB920EE96F000072A54 /* ArtUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00FB320EE950000072A54 /* ArtUtilities.framework */; };
+		D7C00FBA20EE96F000072A54 /* ArtUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00FB320EE950000072A54 /* ArtUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D7CB807620EE444100F69E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807520EE444100F69E54 /* AppDelegate.swift */; };
+		D7CB807820EE444200F69E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807720EE444200F69E54 /* ViewController.swift */; };
+		D7CB807B20EE444200F69E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807920EE444200F69E54 /* Main.storyboard */; };
+		D7CB807D20EE444300F69E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807C20EE444300F69E54 /* Assets.xcassets */; };
+		D7CB808020EE444300F69E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */; };
+		D7CB808B20EE444400F69E54 /* JackBusinessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB808A20EE444400F69E54 /* JackBusinessTests.swift */; };
+		D7CB809620EE444400F69E54 /* JackBusinessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB809520EE444400F69E54 /* JackBusinessUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7C00FB220EE950000072A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D7CB80D120EE697300F69E54;
+			remoteInfo = ArtUtilities;
+		};
+		D7C00FB420EE950000072A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D7CB80DA20EE697300F69E54;
+			remoteInfo = ArtUtilitiesTests;
+		};
+		D7C00FBB20EE96F000072A54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D7CB80D020EE697300F69E54;
+			remoteInfo = ArtUtilities;
+		};
+		D7CB808720EE444400F69E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7CB806A20EE444100F69E54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7CB807120EE444100F69E54;
+			remoteInfo = JackBusiness;
+		};
+		D7CB809220EE444400F69E54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7CB806A20EE444100F69E54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7CB807120EE444100F69E54;
+			remoteInfo = JackBusiness;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D7C00FBD20EE96F000072A54 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D7C00FBA20EE96F000072A54 /* ArtUtilities.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		28B5912BE7388F50065B12C6 /* Pods_JackBusiness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JackBusiness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		41824ED7AA3413D4A2E20053 /* Pods-JackBusiness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JackBusiness.release.xcconfig"; path = "Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness.release.xcconfig"; sourceTree = "<group>"; };
+		D011614BD4A6636151760CA4 /* Pods-JackBusiness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JackBusiness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness.debug.xcconfig"; sourceTree = "<group>"; };
+		D771434120EF77440025E081 /* JKNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKNetwork.swift; sourceTree = "<group>"; };
+		D771434420EF777B0025E081 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D771434C20EF8A9B0025E081 /* AddressSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSelectViewController.swift; sourceTree = "<group>"; };
+		D771435320EFA8270025E081 /* JKMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKMediator.swift; sourceTree = "<group>"; };
+		D771435620EFAAB90025E081 /* JKKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKKeys.swift; sourceTree = "<group>"; };
+		D771435820F006800025E081 /* CreateBusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBusinessViewController.swift; sourceTree = "<group>"; };
+		D771435E20F0CF6F0025E081 /* Jack_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jack_logo.png; sourceTree = "<group>"; };
+		D771435F20F0CF700025E081 /* Jack_logo_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jack_logo_main.png; sourceTree = "<group>"; };
+		D771436020F0CF700025E081 /* Jack_logo_main@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo_main@2x.png"; sourceTree = "<group>"; };
+		D771436120F0CF700025E081 /* Jack_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo@2x.png"; sourceTree = "<group>"; };
+		D771436220F0CF700025E081 /* Jack_logo_main@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo_main@3x.png"; sourceTree = "<group>"; };
+		D771436320F0CF700025E081 /* Jack_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo@3x.png"; sourceTree = "<group>"; };
+		D771436A20F0CF750025E081 /* jackfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jackfont.ttf; sourceTree = "<group>"; };
+		D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArtUtilities.xcodeproj; path = ../ArtUtilities/ArtUtilities.xcodeproj; sourceTree = "<group>"; };
+		D7CB807220EE444100F69E54 /* JackBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JackBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CB807520EE444100F69E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D7CB807720EE444200F69E54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7CB807A20EE444200F69E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D7CB807C20EE444300F69E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7CB807F20EE444300F69E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7CB808120EE444300F69E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7CB808620EE444400F69E54 /* JackBusinessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JackBusinessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CB808A20EE444400F69E54 /* JackBusinessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackBusinessTests.swift; sourceTree = "<group>"; };
+		D7CB808C20EE444400F69E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7CB809120EE444400F69E54 /* JackBusinessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JackBusinessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7CB809520EE444400F69E54 /* JackBusinessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackBusinessUITests.swift; sourceTree = "<group>"; };
+		D7CB809720EE444400F69E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7CB806F20EE444100F69E54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C00FB920EE96F000072A54 /* ArtUtilities.framework in Frameworks */,
+				1459500005C65842AC5870F6 /* Pods_JackBusiness.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CB808320EE444400F69E54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CB808E20EE444400F69E54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BAA08C7BCCCA47EE335E5956 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28B5912BE7388F50065B12C6 /* Pods_JackBusiness.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D767ECB520F34BC50059A370 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D767ECB720F34BCC0059A370 /* Data */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D767ECB720F34BCC0059A370 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D771434020EF77370025E081 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D771434120EF77440025E081 /* JKNetwork.swift */,
+				D771435320EFA8270025E081 /* JKMediator.swift */,
+				D771435620EFAAB90025E081 /* JKKeys.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D771435C20F0CEF70025E081 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				D771436A20F0CF750025E081 /* jackfont.ttf */,
+				D771435D20F0CF020025E081 /* Images */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		D771435D20F0CF020025E081 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D771435F20F0CF700025E081 /* Jack_logo_main.png */,
+				D771436020F0CF700025E081 /* Jack_logo_main@2x.png */,
+				D771436220F0CF700025E081 /* Jack_logo_main@3x.png */,
+				D771435E20F0CF6F0025E081 /* Jack_logo.png */,
+				D771436120F0CF700025E081 /* Jack_logo@2x.png */,
+				D771436320F0CF700025E081 /* Jack_logo@3x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		D7C00FAE20EE950000072A54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7C00FB320EE950000072A54 /* ArtUtilities.framework */,
+				D7C00FB520EE950000072A54 /* ArtUtilitiesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7CB806920EE444100F69E54 = {
+			isa = PBXGroup;
+			children = (
+				D771434420EF777B0025E081 /* Podfile */,
+				D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */,
+				D7CB807420EE444100F69E54 /* JackBusiness */,
+				D7CB808920EE444400F69E54 /* JackBusinessTests */,
+				D7CB809420EE444400F69E54 /* JackBusinessUITests */,
+				D7CB807320EE444100F69E54 /* Products */,
+				DCF63F801FB04DCD4392DEBE /* Pods */,
+				BAA08C7BCCCA47EE335E5956 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D7CB807320EE444100F69E54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7CB807220EE444100F69E54 /* JackBusiness.app */,
+				D7CB808620EE444400F69E54 /* JackBusinessTests.xctest */,
+				D7CB809120EE444400F69E54 /* JackBusinessUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7CB807420EE444100F69E54 /* JackBusiness */ = {
+			isa = PBXGroup;
+			children = (
+				D767ECB520F34BC50059A370 /* Sources */,
+				D771435C20F0CEF70025E081 /* Ressources */,
+				D771434020EF77370025E081 /* Network */,
+				D7CB807520EE444100F69E54 /* AppDelegate.swift */,
+				D7CB807720EE444200F69E54 /* ViewController.swift */,
+				D7CB807920EE444200F69E54 /* Main.storyboard */,
+				D7CB807C20EE444300F69E54 /* Assets.xcassets */,
+				D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */,
+				D7CB808120EE444300F69E54 /* Info.plist */,
+				D771434C20EF8A9B0025E081 /* AddressSelectViewController.swift */,
+				D771435820F006800025E081 /* CreateBusinessViewController.swift */,
+			);
+			path = JackBusiness;
+			sourceTree = "<group>";
+		};
+		D7CB808920EE444400F69E54 /* JackBusinessTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7CB808A20EE444400F69E54 /* JackBusinessTests.swift */,
+				D7CB808C20EE444400F69E54 /* Info.plist */,
+			);
+			path = JackBusinessTests;
+			sourceTree = "<group>";
+		};
+		D7CB809420EE444400F69E54 /* JackBusinessUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D7CB809520EE444400F69E54 /* JackBusinessUITests.swift */,
+				D7CB809720EE444400F69E54 /* Info.plist */,
+			);
+			path = JackBusinessUITests;
+			sourceTree = "<group>";
+		};
+		DCF63F801FB04DCD4392DEBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D011614BD4A6636151760CA4 /* Pods-JackBusiness.debug.xcconfig */,
+				41824ED7AA3413D4A2E20053 /* Pods-JackBusiness.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7CB807120EE444100F69E54 /* JackBusiness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7CB809A20EE444400F69E54 /* Build configuration list for PBXNativeTarget "JackBusiness" */;
+			buildPhases = (
+				00A4E7E977191057D5C25204 /* [CP] Check Pods Manifest.lock */,
+				D7CB806E20EE444100F69E54 /* Sources */,
+				D7CB806F20EE444100F69E54 /* Frameworks */,
+				D7CB807020EE444100F69E54 /* Resources */,
+				D7C00FBD20EE96F000072A54 /* Embed Frameworks */,
+				4C6655A18B120E9541EA7573 /* [CP] Embed Pods Frameworks */,
+				A99B7AB3D59D100834D1D194 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7C00FBC20EE96F000072A54 /* PBXTargetDependency */,
+			);
+			name = JackBusiness;
+			productName = JackBusiness;
+			productReference = D7CB807220EE444100F69E54 /* JackBusiness.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7CB808520EE444400F69E54 /* JackBusinessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7CB809D20EE444400F69E54 /* Build configuration list for PBXNativeTarget "JackBusinessTests" */;
+			buildPhases = (
+				D7CB808220EE444400F69E54 /* Sources */,
+				D7CB808320EE444400F69E54 /* Frameworks */,
+				D7CB808420EE444400F69E54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7CB808820EE444400F69E54 /* PBXTargetDependency */,
+			);
+			name = JackBusinessTests;
+			productName = JackBusinessTests;
+			productReference = D7CB808620EE444400F69E54 /* JackBusinessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7CB809020EE444400F69E54 /* JackBusinessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7CB80A020EE444400F69E54 /* Build configuration list for PBXNativeTarget "JackBusinessUITests" */;
+			buildPhases = (
+				D7CB808D20EE444400F69E54 /* Sources */,
+				D7CB808E20EE444400F69E54 /* Frameworks */,
+				D7CB808F20EE444400F69E54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7CB809320EE444400F69E54 /* PBXTargetDependency */,
+			);
+			name = JackBusinessUITests;
+			productName = JackBusinessUITests;
+			productReference = D7CB809120EE444400F69E54 /* JackBusinessUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7CB806A20EE444100F69E54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Arthur Ngo Van";
+				TargetAttributes = {
+					D7CB807120EE444100F69E54 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					D7CB808520EE444400F69E54 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = D7CB807120EE444100F69E54;
+					};
+					D7CB809020EE444400F69E54 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = D7CB807120EE444100F69E54;
+					};
+				};
+			};
+			buildConfigurationList = D7CB806D20EE444100F69E54 /* Build configuration list for PBXProject "JackBusiness" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7CB806920EE444100F69E54;
+			productRefGroup = D7CB807320EE444100F69E54 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D7C00FAE20EE950000072A54 /* Products */;
+					ProjectRef = D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D7CB807120EE444100F69E54 /* JackBusiness */,
+				D7CB808520EE444400F69E54 /* JackBusinessTests */,
+				D7CB809020EE444400F69E54 /* JackBusinessUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D7C00FB320EE950000072A54 /* ArtUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ArtUtilities.framework;
+			remoteRef = D7C00FB220EE950000072A54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D7C00FB520EE950000072A54 /* ArtUtilitiesTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ArtUtilitiesTests.xctest;
+			remoteRef = D7C00FB420EE950000072A54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7CB807020EE444100F69E54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CB808020EE444300F69E54 /* LaunchScreen.storyboard in Resources */,
+				D771436620F0CF700025E081 /* Jack_logo_main@2x.png in Resources */,
+				D771436420F0CF700025E081 /* Jack_logo.png in Resources */,
+				D771436920F0CF700025E081 /* Jack_logo@3x.png in Resources */,
+				D771436B20F0CF760025E081 /* jackfont.ttf in Resources */,
+				D771436820F0CF700025E081 /* Jack_logo_main@3x.png in Resources */,
+				D7CB807D20EE444300F69E54 /* Assets.xcassets in Resources */,
+				D771434520EF777B0025E081 /* Podfile in Resources */,
+				D771436520F0CF700025E081 /* Jack_logo_main.png in Resources */,
+				D771436720F0CF700025E081 /* Jack_logo@2x.png in Resources */,
+				D7CB807B20EE444200F69E54 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CB808420EE444400F69E54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CB808F20EE444400F69E54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00A4E7E977191057D5C25204 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JackBusiness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C6655A18B120E9541EA7573 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A99B7AB3D59D100834D1D194 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JackBusiness/Pods-JackBusiness-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7CB806E20EE444100F69E54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D771434220EF77440025E081 /* JKNetwork.swift in Sources */,
+				D7CB807820EE444200F69E54 /* ViewController.swift in Sources */,
+				D7CB807620EE444100F69E54 /* AppDelegate.swift in Sources */,
+				D771435420EFA8270025E081 /* JKMediator.swift in Sources */,
+				D771435720EFAAB90025E081 /* JKKeys.swift in Sources */,
+				D771435920F006800025E081 /* CreateBusinessViewController.swift in Sources */,
+				D771434D20EF8A9B0025E081 /* AddressSelectViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CB808220EE444400F69E54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7CB808B20EE444400F69E54 /* JackBusinessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7CB808D20EE444400F69E54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D771436C20F0F60D0025E081 /* AppDelegate.swift in Sources */,
+				D7CB809620EE444400F69E54 /* JackBusinessUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7C00FBC20EE96F000072A54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ArtUtilities;
+			targetProxy = D7C00FBB20EE96F000072A54 /* PBXContainerItemProxy */;
+		};
+		D7CB808820EE444400F69E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7CB807120EE444100F69E54 /* JackBusiness */;
+			targetProxy = D7CB808720EE444400F69E54 /* PBXContainerItemProxy */;
+		};
+		D7CB809320EE444400F69E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7CB807120EE444100F69E54 /* JackBusiness */;
+			targetProxy = D7CB809220EE444400F69E54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7CB807920EE444200F69E54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7CB807A20EE444200F69E54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7CB807F20EE444300F69E54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7CB809820EE444400F69E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D7CB809920EE444400F69E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7CB809B20EE444400F69E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D011614BD4A6636151760CA4 /* Pods-JackBusiness.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = JackBusiness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusiness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7CB809C20EE444400F69E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41824ED7AA3413D4A2E20053 /* Pods-JackBusiness.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = JackBusiness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusiness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7CB809E20EE444400F69E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = JackBusinessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusinessTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JackBusiness.app/JackBusiness";
+			};
+			name = Debug;
+		};
+		D7CB809F20EE444400F69E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = JackBusinessTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusinessTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JackBusiness.app/JackBusiness";
+			};
+			name = Release;
+		};
+		D7CB80A120EE444400F69E54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = JackBusinessUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusinessUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JackBusiness;
+			};
+			name = Debug;
+		};
+		D7CB80A220EE444400F69E54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YNRL7XBC56;
+				INFOPLIST_FILE = JackBusinessUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusinessUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JackBusiness;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7CB806D20EE444100F69E54 /* Build configuration list for PBXProject "JackBusiness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CB809820EE444400F69E54 /* Debug */,
+				D7CB809920EE444400F69E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7CB809A20EE444400F69E54 /* Build configuration list for PBXNativeTarget "JackBusiness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CB809B20EE444400F69E54 /* Debug */,
+				D7CB809C20EE444400F69E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7CB809D20EE444400F69E54 /* Build configuration list for PBXNativeTarget "JackBusinessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CB809E20EE444400F69E54 /* Debug */,
+				D7CB809F20EE444400F69E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7CB80A020EE444400F69E54 /* Build configuration list for PBXNativeTarget "JackBusinessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7CB80A120EE444400F69E54 /* Debug */,
+				D7CB80A220EE444400F69E54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7CB806A20EE444100F69E54 /* Project object */;
+}

@@ -1,0 +1,27 @@
+/* 
+  Localizable.string.strings
+  Jack
+
+  Created by Arthur Ngo Van on 6/27/18.
+  Copyright © 2018 Arthur Ngo Van. All rights reserved.
+*/
+
+/* BASE */
+
+"app_name" = "Jack";
+
+
+/* AUTH */
+
+"login" = "login";
+
+
+/* HOME */
+
+"choosePickupTime" = "Choissez l'heure de retrait";
+"validatePickupTime" = "Validez l'heure de retrait";
+
+"availableRestaurants" = "Restaurants disponibles à:";
+
+
+//"" = "";
