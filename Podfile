@@ -12,5 +12,9 @@ target 'JackBusiness' do
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
+  
+  pod 'AWSUserPoolsSignIn', '~> 2.6.13'
+  pod 'AWSAuthUI', '~> 2.6.13'
+  pod 'AWSMobileClient', '~> 2.6.13'
 
 end

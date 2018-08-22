@@ -73,7 +73,7 @@ class CreateBusinessViewController: UIViewController {
             }
         }
         
-        JKMediator.createBusiness(name: nameInput.text!, address: addressInput.text!, type: typeInput.text!, url: urlInput.text!, description: descriptionInput.text!, success: { (id) in
+        JKMediator.createBusiness(name: nameInput.text!, address: addressInput.text!, type: typeInput.text!, description: descriptionInput.text!, url: urlInput.text!, success: { (id) in
             self.navigationController?.popViewController(animated: true)
         }, failure: {
             

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrderProductTableCell" rowHeight="80" id="hd2-dQ-EG4" customClass="OrderProductTableCell" customModule="JackBusiness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hd2-dQ-EG4" id="UNg-7B-klq">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnZ-p3-RQl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yyB-E9-ocD" customClass="AImageView" customModule="ArtUtilities">
+                                <rect key="frame" x="5" y="5" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yyB-E9-ocD" secondAttribute="height" multiplier="1:1" id="e2q-An-5uO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusRatio">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANN-fw-B05">
+                                <rect key="frame" x="70" y="5" width="228.5" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgE-7p-KeS" customClass="PriceLabel" customModule="ArtUtilities">
+                                <rect key="frame" x="303.5" y="5" width="66.5" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="tgE-7p-KeS" secondAttribute="height" multiplier="11:10" id="HSs-P3-Boe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ANN-fw-B05" firstAttribute="leading" secondItem="yyB-E9-ocD" secondAttribute="trailing" constant="5" id="7B6-jn-Nku"/>
+                            <constraint firstItem="ANN-fw-B05" firstAttribute="top" secondItem="UnZ-p3-RQl" secondAttribute="top" constant="5" id="7I4-OH-lG4"/>
+                            <constraint firstAttribute="bottom" secondItem="yyB-E9-ocD" secondAttribute="bottom" constant="5" id="Mb1-eP-G6i"/>
+                            <constraint firstAttribute="bottom" secondItem="ANN-fw-B05" secondAttribute="bottom" constant="5" id="PRq-Ys-XOC"/>
+                            <constraint firstItem="tgE-7p-KeS" firstAttribute="leading" secondItem="ANN-fw-B05" secondAttribute="trailing" constant="5" id="QCc-1S-o20"/>
+                            <constraint firstItem="yyB-E9-ocD" firstAttribute="top" secondItem="UnZ-p3-RQl" secondAttribute="top" constant="5" id="TIm-DH-G78"/>
+                            <constraint firstItem="yyB-E9-ocD" firstAttribute="leading" secondItem="UnZ-p3-RQl" secondAttribute="leading" constant="5" id="XEq-Jt-Pqi"/>
+                            <constraint firstAttribute="trailing" secondItem="tgE-7p-KeS" secondAttribute="trailing" constant="5" id="bdp-bJ-CEi"/>
+                            <constraint firstItem="tgE-7p-KeS" firstAttribute="top" secondItem="UnZ-p3-RQl" secondAttribute="top" constant="5" id="lKj-NR-GdY"/>
+                            <constraint firstAttribute="bottom" secondItem="tgE-7p-KeS" secondAttribute="bottom" constant="5" id="vCo-GB-1v5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="UnZ-p3-RQl" firstAttribute="top" secondItem="UNg-7B-klq" secondAttribute="top" id="F4a-JZ-fw8"/>
+                    <constraint firstAttribute="bottom" secondItem="UnZ-p3-RQl" secondAttribute="bottom" id="alI-NS-5On"/>
+                    <constraint firstAttribute="trailing" secondItem="UnZ-p3-RQl" secondAttribute="trailing" id="dPI-Yu-H15"/>
+                    <constraint firstItem="UnZ-p3-RQl" firstAttribute="leading" secondItem="UNg-7B-klq" secondAttribute="leading" id="yTm-Fz-HdG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="nameLabel" destination="ANN-fw-B05" id="uyI-BT-Czj"/>
+                <outlet property="priceView" destination="tgE-7p-KeS" id="zEr-6s-Dg6"/>
+                <outlet property="productImageView" destination="yyB-E9-ocD" id="je0-WE-u2t"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="54"/>
+        </tableViewCell>
+    </objects>
+</document>

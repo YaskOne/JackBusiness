@@ -1,5 +1,20 @@
 PODS:
   - Alamofire (4.7.2)
+  - AWSAuthCore (2.6.23):
+    - AWSCore (= 2.6.23)
+  - AWSAuthUI (2.6.23):
+    - AWSAuthCore (= 2.6.23)
+    - AWSCore (= 2.6.23)
+  - AWSCognitoIdentityProvider (2.6.23):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.6.23)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.6.23)
+  - AWSMobileClient (2.6.23):
+    - AWSAuthCore (= 2.6.23)
+  - AWSUserPoolsSignIn (2.6.23):
+    - AWSAuthCore (= 2.6.23)
+    - AWSCognitoIdentityProvider (= 2.6.23)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
@@ -14,6 +29,9 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AWSAuthUI (~> 2.6.13)
+  - AWSMobileClient (~> 2.6.13)
+  - AWSUserPoolsSignIn (~> 2.6.13)
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
@@ -22,6 +40,13 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSUserPoolsSignIn
     - GoogleMaps
     - GooglePlacePicker
     - GooglePlaces
@@ -29,11 +54,18 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AWSAuthCore: 2db4c4f3db70e5789193b602e0392d25da6aca4e
+  AWSAuthUI: 0ac83168ce36d55367b3755acf8af7d29a533b3f
+  AWSCognitoIdentityProvider: 605ea825077825717418e37fba27d5cd23958ea2
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: d56f69d7312e652e51c70f3b25e1687a5c2d06ca
+  AWSMobileClient: c94ca9856f99e99a4813ebc7f4c19cecce7f06c8
+  AWSUserPoolsSignIn: a101355358dec050f2ee2e81302e6011e2a95093
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   GooglePlacePicker: 59ea44db173c58486ad6123993e81feefcbce9c3
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 0d6e584aff486a74e210d1bb6ef941127128bd57
+PODFILE CHECKSUM: cf6a5dbd158591844763ffdc9738ef2f6ce6c56d
 
 COCOAPODS: 1.5.3

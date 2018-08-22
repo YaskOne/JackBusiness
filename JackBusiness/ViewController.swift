@@ -10,6 +10,8 @@ import UIKit
 import ArtUtilities
 import GoogleMaps
 import GooglePlaces
+import AWSUserPoolsSignIn
+import AWSAuthUI
 
 class ViewController: UIViewController {
 
@@ -19,8 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        JKNetwork.shared.server = "http://127.0.0.1:8080"
-//        GMSServices.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
+        JKNetwork.shared.server = "http://127.0.0.1:3000"
+        JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,12 +43,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginBusiness(_ sender: Any) {
-        if let text = businessIdText.text, let id = Int(text) {
+        if let text = businessIdText.text, let id = UInt(text) {
             JKMediator.fetchBusiness(ids: [id], success: { businesses in
+                if businesses.count == 0 {
+                    return
+                }
                 JKSession.shared.business = businesses[0]
                 print("JKSession : \(businesses[0].id)")
                 
-                let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "BusinessViewController") as? BusinessViewController
+                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BusinessDashboardViewController") as? BusinessDashboardViewController
                 self.navigationController?.pushViewController(vc!, animated: true)
             }, failure: {})
         }

@@ -1,0 +1,103 @@
+//
+//  ProductsOrderTableViewController.swift
+//  JackBusiness
+//
+//  Created by Arthur Ngo Van on 8/22/18.
+//  Copyright © 2018 Arthur Ngo Van. All rights reserved.
+//
+
+import UIKit
+import ArtUtilities
+import JackModel
+
+class ProductsOrderTableViewController: ATableViewController {
+
+    override var cellIdentifiers: [ARowType: String] {
+        return [
+            .header: "PlaceHeaderCell",
+            .section: "CategoryCell",
+            .row: "OrderProductTableCell",
+        ]
+    }
+    
+    override var cellHeights: [ARowType: CGFloat] {
+        return [
+            .header: 250,
+            .section: 40,
+            .row: 70,
+        ]
+    }
+
+    var productIds: [UInt] = [] {
+        didSet {
+            products = []
+            source = []
+            if productIds.count != 0 {
+                JKMediator.fetchProducts(ids: productIds, success: { products in
+                    self.products = products
+                }, failure: {
+                    
+                })
+            }
+        }
+    }
+    
+    var products: [JKProduct] = [] {
+        didSet {
+            for item in products {
+                source.append(ATableViewRow.init(type: .row, section: 0, object: item))
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setUp()
+    }
+    
+    func setUp() {
+//        JKMediator.fetchBusinessOrders(id: JKSession.shared.business!.id, success: {orders in
+//            self.orders = orders
+//        }, failure: {
+//            
+//        })
+    }
+    
+    override func setUpRow(item: ATableViewRow, indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.setUpRow(item: item, indexPath: indexPath)
+        
+        cell.selectionStyle = .none
+        
+        if let cell = cell as? OrderProductTableCell, let product = item.object as? JKProduct {
+            cell.product = product
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
+    
+}
+
+class OrderProductTableCell: UITableViewCell {
+    
+    @IBOutlet weak var productImageView: AImageView?
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var priceView: PriceLabel?
+    
+    var product: JKProduct? {
+        didSet {
+            if let product = product {
+                nameLabel?.text = product.name
+                priceView?.price = product.price
+                if product.url != "" {
+                    JKImageLoader.loadImage(imageView: productImageView, url: product.url) {}
+                }
+                else {
+                    productImageView?.image = nil
+                }
+            }
+        }
+    }
+}
