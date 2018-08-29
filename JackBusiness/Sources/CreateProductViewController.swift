@@ -30,7 +30,22 @@ class CreateProductViewController: UIViewController {
     @IBOutlet weak var urlLabel: AFormLabel!
     @IBOutlet weak var urlInput: UITextField!
     
-    var formFields: [RegisterProductFormField: AFormField] = [:]
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    lazy var formFields: [RegisterProductFormField: AFormField] = {
+        var fields: [RegisterProductFormField: AFormField] = [:]
+        fields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
+            return self.nameInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        fields[.price] = AFormField(input: priceInput, label: priveLabel, defaultValue: "") {
+            return self.priceInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        fields[.category] = AFormField(input: categoryInput, label: categoryLabel, defaultValue: "") {
+            return self.categoryInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        fields[.url] = AFormField(input: urlInput, label: urlLabel, defaultValue: "", mandatory: false)
+        return fields
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +53,8 @@ class CreateProductViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Validate", style: .plain, target: self, action: #selector(validateTapped))
         
-        formFields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
-            return self.nameInput.text != "" ? FormStatus.valid : FormStatus.invalid
-        }
-        formFields[.price] = AFormField(input: priceInput, label: priveLabel, defaultValue: "") {
-            return self.priceInput.text != "" ? FormStatus.valid : FormStatus.invalid
-        }
-        formFields[.category] = AFormField(input: categoryInput, label: categoryLabel, defaultValue: "") {
-            return self.categoryInput.text != "" ? FormStatus.valid : FormStatus.invalid
-        }
-        formFields[.url] = AFormField(input: urlInput, label: urlLabel, defaultValue: "", mandatory: false)
+        print(formFields.count)
+        handleKeyboardVisibility()
     }
 
     override func didReceiveMemoryWarning() {

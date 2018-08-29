@@ -12,6 +12,7 @@ import GooglePlaces
 
 enum RegisterBusinessFormField: Int {
     case name
+    case password
     case address
     case type
     case description
@@ -21,12 +22,14 @@ enum RegisterBusinessFormField: Int {
 class CreateBusinessViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: AFormLabel!
+    @IBOutlet weak var passwordLabel: AFormLabel!
     @IBOutlet weak var addressLabel: AFormLabel!
     @IBOutlet weak var typeLabel: AFormLabel!
     @IBOutlet weak var descriptionLabel: AFormLabel!
     @IBOutlet weak var urlLabel: AFormLabel!
     
     @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
     @IBOutlet weak var addressInput: UITextField!
     @IBOutlet weak var typeInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextField!
@@ -42,6 +45,9 @@ class CreateBusinessViewController: UIViewController {
         
         formFields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
             return self.nameInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        formFields[.password] = AFormField(input: passwordInput, label: passwordLabel, defaultValue: "") {
+            return self.passwordInput.text != "" ? FormStatus.valid : FormStatus.invalid
         }
         formFields[.address] = AFormField(input: addressInput, label: addressLabel, defaultValue: "") {
             return self.addressInput.text != "" ? FormStatus.valid : FormStatus.invalid
@@ -73,7 +79,7 @@ class CreateBusinessViewController: UIViewController {
             }
         }
         
-        JKMediator.createBusiness(name: nameInput.text!, address: addressInput.text!, type: typeInput.text!, description: descriptionInput.text!, url: urlInput.text!, success: { (id) in
+        JKMediator.createBusiness(name: nameInput.text!, password: passwordInput.text!, address: addressInput.text!, type: typeInput.text!, description: descriptionInput.text!, url: urlInput.text!, success: { (id) in
             self.navigationController?.popViewController(animated: true)
         }, failure: {
             

@@ -30,26 +30,33 @@ class JKNetwork {
         var headers = HTTPHeaders()
         headers["Content-Type"] = "application/json"
         headers["Accept"] = "application/json"
-        
-        print(server! + "/" + path)
-        print(parameters?.description)
+        headers["authorization"] = "allow"
+
+        print("----------------------------- (\(server)")
+        print("Request: \(path)")
+        print("  - parameters: \(parameters)")
         Alamofire
             .request(server! + "/" + path, method: method, parameters: parameters, encoding: paramsEncoding, headers: headers)
             .responseJSON { response in
-//                print("---- \(response.request)")  // original URL request
-//                print("---- \(response.response)") // URL response
-//                print("---- \(response.data)")     // server data
-//                print("---- \(response.result)")   // result of response serialization
 
                 do {
                     var json = try JSON(data: response.data!)
-                
-//                    print(json)
-//                    print(json["places"][0])
-//                    print(json["places"][0]["CreatedAt"])
+                    
+                    if let error = json.dictionaryObject?["error"] {
+                        print("Error: \(path)")
+                        print("  - message: \(error)")
+                    }
+
+                    if response.response?.statusCode != 200 {
+                        failure()
+                        return
+                    }
+
+                    print("Success: \(path)")
+
                     success(json)
                 } catch {
-                    
+                    failure()
                 }
             }
         

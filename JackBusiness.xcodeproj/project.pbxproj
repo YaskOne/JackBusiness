@@ -21,10 +21,11 @@
 		D771436920F0CF700025E081 /* Jack_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D771436320F0CF700025E081 /* Jack_logo@3x.png */; };
 		D771436B20F0CF760025E081 /* jackfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D771436A20F0CF750025E081 /* jackfont.ttf */; };
 		D771436C20F0F60D0025E081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807520EE444100F69E54 /* AppDelegate.swift */; };
+		D78437532132DB3100F0C4CF /* JKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78437522132DB3100F0C4CF /* JKCache.swift */; };
 		D7C00FB920EE96F000072A54 /* ArtUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00FB320EE950000072A54 /* ArtUtilities.framework */; };
 		D7C00FBA20EE96F000072A54 /* ArtUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00FB320EE950000072A54 /* ArtUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7CB807620EE444100F69E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807520EE444100F69E54 /* AppDelegate.swift */; };
-		D7CB807820EE444200F69E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807720EE444200F69E54 /* ViewController.swift */; };
+		D7CB807820EE444200F69E54 /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB807720EE444200F69E54 /* AuthentificationViewController.swift */; };
 		D7CB807B20EE444200F69E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807920EE444200F69E54 /* Main.storyboard */; };
 		D7CB807D20EE444300F69E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807C20EE444300F69E54 /* Assets.xcassets */; };
 		D7CB808020EE444300F69E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */; };
@@ -35,6 +36,15 @@
 		D7CBA040212D73950030AADC /* ProductsOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CBA03F212D73950030AADC /* ProductsOrderTableViewController.swift */; };
 		D7CBA042212D74580030AADC /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CBA041212D74580030AADC /* OrderTableCell.xib */; };
 		D7CBA044212D74720030AADC /* OrderProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CBA043212D74720030AADC /* OrderProductTableCell.xib */; };
+		D7F0AFCE212DCD31005302CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFCD212DCD31005302CF /* Home.storyboard */; };
+		D7F0AFD2212DCF3D005302CF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0AFD1212DCF3D005302CF /* StartViewController.swift */; };
+		D7F0AFD5212DD1D0005302CF /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFD4212DD1D0005302CF /* Authentification.storyboard */; };
+		D7F0AFD9212EBE3F005302CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0AFD8212EBE3F005302CF /* HomeViewController.swift */; };
+		D7F0AFDE212EFA7F005302CF /* StocksOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0AFDD212EFA7F005302CF /* StocksOverviewViewController.swift */; };
+		D7F0AFE02132B6E4005302CF /* CategoriesOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0AFDF2132B6E4005302CF /* CategoriesOverviewTableViewController.swift */; };
+		D7F0AFE22132B6FD005302CF /* ProductsOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0AFE12132B6FD005302CF /* ProductsOverviewTableViewController.swift */; };
+		D7F0AFE42132B850005302CF /* ProductOverviewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFE32132B850005302CF /* ProductOverviewTableCell.xib */; };
+		D7F0AFE62132B8EB005302CF /* CategoryOverviewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFE52132B8EB005302CF /* CategoryOverviewTableCell.xib */; };
 		D7F0B8C720F643E0003765A3 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0B8C620F643E0003765A3 /* CreateProductViewController.swift */; };
 		D7F0B8CF20F648A3003765A3 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0B8CE20F648A3003765A3 /* CreateCategoryViewController.swift */; };
 		D7F8820820F34FB900B2F7EE /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D767ECEC20F34F270059A370 /* JackModel.framework */; };
@@ -134,10 +144,11 @@
 		D771436220F0CF700025E081 /* Jack_logo_main@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo_main@3x.png"; sourceTree = "<group>"; };
 		D771436320F0CF700025E081 /* Jack_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo@3x.png"; sourceTree = "<group>"; };
 		D771436A20F0CF750025E081 /* jackfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jackfont.ttf; sourceTree = "<group>"; };
+		D78437522132DB3100F0C4CF /* JKCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKCache.swift; sourceTree = "<group>"; };
 		D7C00FAD20EE950000072A54 /* ArtUtilities.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ArtUtilities.xcodeproj; path = ../ArtUtilities/ArtUtilities.xcodeproj; sourceTree = "<group>"; };
 		D7CB807220EE444100F69E54 /* JackBusiness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JackBusiness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7CB807520EE444100F69E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D7CB807720EE444200F69E54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7CB807720EE444200F69E54 /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		D7CB807A20EE444200F69E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7CB807C20EE444300F69E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7CB807F20EE444300F69E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -153,6 +164,15 @@
 		D7CBA03F212D73950030AADC /* ProductsOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsOrderTableViewController.swift; sourceTree = "<group>"; };
 		D7CBA041212D74580030AADC /* OrderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableCell.xib; sourceTree = "<group>"; };
 		D7CBA043212D74720030AADC /* OrderProductTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductTableCell.xib; sourceTree = "<group>"; };
+		D7F0AFCD212DCD31005302CF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		D7F0AFD1212DCF3D005302CF /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D7F0AFD4212DD1D0005302CF /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
+		D7F0AFD8212EBE3F005302CF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D7F0AFDD212EFA7F005302CF /* StocksOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksOverviewViewController.swift; sourceTree = "<group>"; };
+		D7F0AFDF2132B6E4005302CF /* CategoriesOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesOverviewTableViewController.swift; sourceTree = "<group>"; };
+		D7F0AFE12132B6FD005302CF /* ProductsOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsOverviewTableViewController.swift; sourceTree = "<group>"; };
+		D7F0AFE32132B850005302CF /* ProductOverviewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductOverviewTableCell.xib; sourceTree = "<group>"; };
+		D7F0AFE52132B8EB005302CF /* CategoryOverviewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryOverviewTableCell.xib; sourceTree = "<group>"; };
 		D7F0B8C620F643E0003765A3 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
 		D7F0B8CE20F648A3003765A3 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
 		D7F8821520F356E500B2F7EE /* JKSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKSession.swift; sourceTree = "<group>"; };
@@ -198,7 +218,10 @@
 		D767ECB520F34BC50059A370 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D7CBA03C212D734A0030AADC /* Dashboard */,
+				D784374F2132DB1C00F0C4CF /* Utils */,
+				D7F0AFD6212EBE0B005302CF /* Home */,
+				D771434020EF77370025E081 /* Network */,
+				D7F0AFD3212DD1BB005302CF /* Auth */,
 				D7F8821520F356E500B2F7EE /* JKSession.swift */,
 				D7F8821720F3A2B700B2F7EE /* BusinessViewController.swift */,
 				D7F0B8C620F643E0003765A3 /* CreateProductViewController.swift */,
@@ -247,6 +270,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		D784374F2132DB1C00F0C4CF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D78437522132DB3100F0C4CF /* JKCache.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D7C00FAE20EE950000072A54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,10 +317,9 @@
 			children = (
 				D767ECB520F34BC50059A370 /* Sources */,
 				D771435C20F0CEF70025E081 /* Ressources */,
-				D771434020EF77370025E081 /* Network */,
 				D7CB807520EE444100F69E54 /* AppDelegate.swift */,
-				D7CB807720EE444200F69E54 /* ViewController.swift */,
 				D7CB807920EE444200F69E54 /* Main.storyboard */,
+				D7F0AFD1212DCF3D005302CF /* StartViewController.swift */,
 				D7CB807C20EE444300F69E54 /* Assets.xcassets */,
 				D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */,
 				D7CB808120EE444300F69E54 /* Info.plist */,
@@ -327,6 +357,46 @@
 				D7CBA043212D74720030AADC /* OrderProductTableCell.xib */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		D7F0AFD3212DD1BB005302CF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				D7CB807720EE444200F69E54 /* AuthentificationViewController.swift */,
+				D7F0AFD4212DD1D0005302CF /* Authentification.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		D7F0AFD6212EBE0B005302CF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D7F0AFDC212EFA0D005302CF /* Stocks */,
+				D7F0AFD7212EBE16005302CF /* Shop */,
+				D7CBA03C212D734A0030AADC /* Dashboard */,
+				D7F0AFD8212EBE3F005302CF /* HomeViewController.swift */,
+				D7F0AFCD212DCD31005302CF /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D7F0AFD7212EBE16005302CF /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		D7F0AFDC212EFA0D005302CF /* Stocks */ = {
+			isa = PBXGroup;
+			children = (
+				D7F0AFDD212EFA7F005302CF /* StocksOverviewViewController.swift */,
+				D7F0AFDF2132B6E4005302CF /* CategoriesOverviewTableViewController.swift */,
+				D7F0AFE12132B6FD005302CF /* ProductsOverviewTableViewController.swift */,
+				D7F0AFE32132B850005302CF /* ProductOverviewTableCell.xib */,
+				D7F0AFE52132B8EB005302CF /* CategoryOverviewTableCell.xib */,
+			);
+			path = Stocks;
 			sourceTree = "<group>";
 		};
 		DCF63F801FB04DCD4392DEBE /* Pods */ = {
@@ -500,8 +570,12 @@
 				D7CBA044212D74720030AADC /* OrderProductTableCell.xib in Resources */,
 				D771434520EF777B0025E081 /* Podfile in Resources */,
 				D771436520F0CF700025E081 /* Jack_logo_main.png in Resources */,
+				D7F0AFD5212DD1D0005302CF /* Authentification.storyboard in Resources */,
 				D771436720F0CF700025E081 /* Jack_logo@2x.png in Resources */,
+				D7F0AFE42132B850005302CF /* ProductOverviewTableCell.xib in Resources */,
+				D7F0AFE62132B8EB005302CF /* CategoryOverviewTableCell.xib in Resources */,
 				D7CB807B20EE444200F69E54 /* Main.storyboard in Resources */,
+				D7F0AFCE212DCD31005302CF /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,13 +678,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D771434220EF77440025E081 /* JKNetwork.swift in Sources */,
+				D7F0AFD2212DCF3D005302CF /* StartViewController.swift in Sources */,
+				D7F0AFE22132B6FD005302CF /* ProductsOverviewTableViewController.swift in Sources */,
 				D7CBA03E212D73680030AADC /* OrdersTableViewController.swift in Sources */,
-				D7CB807820EE444200F69E54 /* ViewController.swift in Sources */,
+				D7CB807820EE444200F69E54 /* AuthentificationViewController.swift in Sources */,
 				D7F0B8CF20F648A3003765A3 /* CreateCategoryViewController.swift in Sources */,
+				D7F0AFD9212EBE3F005302CF /* HomeViewController.swift in Sources */,
 				D7F8821820F3A2B800B2F7EE /* BusinessViewController.swift in Sources */,
 				D7CB807620EE444100F69E54 /* AppDelegate.swift in Sources */,
+				D7F0AFE02132B6E4005302CF /* CategoriesOverviewTableViewController.swift in Sources */,
 				D771435420EFA8270025E081 /* JKMediator.swift in Sources */,
 				D7CBA039212D732D0030AADC /* BusinessDashboardViewController.swift in Sources */,
+				D7F0AFDE212EFA7F005302CF /* StocksOverviewViewController.swift in Sources */,
+				D78437532132DB3100F0C4CF /* JKCache.swift in Sources */,
 				D7F0B8C720F643E0003765A3 /* CreateProductViewController.swift in Sources */,
 				D771435920F006800025E081 /* CreateBusinessViewController.swift in Sources */,
 				D7CBA040212D73950030AADC /* ProductsOrderTableViewController.swift in Sources */,

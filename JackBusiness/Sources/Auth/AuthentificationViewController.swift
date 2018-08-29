@@ -13,9 +13,10 @@ import GooglePlaces
 import AWSUserPoolsSignIn
 import AWSAuthUI
 
-class ViewController: UIViewController {
+class AuthentificationViewController: UIViewController {
 
-    @IBOutlet weak var businessIdText: UITextField!
+    @IBOutlet weak var businessName: UITextField!
+    @IBOutlet weak var businessPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
@@ -23,6 +24,9 @@ class ViewController: UIViewController {
         
         JKNetwork.shared.server = "http://127.0.0.1:3000"
         JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
+     
+        handleKeyboardVisibility()
+        handleKeyboardOffset()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,22 +47,21 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginBusiness(_ sender: Any) {
-        if let text = businessIdText.text, let id = UInt(text) {
-            JKMediator.fetchBusiness(ids: [id], success: { businesses in
-                if businesses.count == 0 {
-                    return
-                }
-                JKSession.shared.business = businesses[0]
-                print("JKSession : \(businesses[0].id)")
+        if let name = businessName.text,
+            let password = businessPassword.text {
+            JKMediator.logBusiness(name: name, password: password, success: { business in
+                JKSession.shared.business = business
                 
-                let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "BusinessDashboardViewController") as? BusinessDashboardViewController
+                let vc = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
                 self.navigationController?.pushViewController(vc!, animated: true)
-            }, failure: {})
+            }, failure: {
+                
+            })
         }
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension AuthentificationViewController: UITextFieldDelegate {
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         loginButton.isEnabled = textField.text != ""

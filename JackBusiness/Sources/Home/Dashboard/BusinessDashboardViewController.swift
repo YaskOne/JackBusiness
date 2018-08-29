@@ -13,7 +13,6 @@ class BusinessDashboardViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    
     var productsOrderTable: ProductsOrderTableViewController?
     var orderTable: OrdersTableViewController?
 

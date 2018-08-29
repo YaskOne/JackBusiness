@@ -36,6 +36,7 @@ class OrdersTableViewController: ATableViewController {
     
     var orders: [JKOrder] = [] {
         didSet {
+            source = []
             for item in orders {
                 source.append(ATableViewRow.init(type: .row, section: 0, object: item))
             }

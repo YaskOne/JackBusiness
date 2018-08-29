@@ -22,8 +22,6 @@ class BusinessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        
         profileImageView.imageFromURL(urlString: JKSession.shared.business?.url ?? "")
         
         nameLabel.text = "NAME: \(JKSession.shared.business?.name)"
