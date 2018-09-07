@@ -32,9 +32,8 @@ class JKNetwork {
         headers["Accept"] = "application/json"
         headers["authorization"] = "allow"
 
-        print("----------------------------- (\(server)")
         print("Request: \(path)")
-        print("  - parameters: \(parameters)")
+        print("  - parameters: \(String(describing: parameters))")
         Alamofire
             .request(server! + "/" + path, method: method, parameters: parameters, encoding: paramsEncoding, headers: headers)
             .responseJSON { response in
@@ -42,6 +41,9 @@ class JKNetwork {
                 do {
                     var json = try JSON(data: response.data!)
                     
+                    if let status = response.response?.statusCode {
+                        print("Status: \(status)")
+                    }
                     if let error = json.dictionaryObject?["error"] {
                         print("Error: \(path)")
                         print("  - message: \(error)")

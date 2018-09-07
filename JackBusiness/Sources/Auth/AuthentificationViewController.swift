@@ -15,16 +15,13 @@ import AWSAuthUI
 
 class AuthentificationViewController: UIViewController {
 
-    @IBOutlet weak var businessName: UITextField!
+    @IBOutlet weak var businessEmail: UITextField!
     @IBOutlet weak var businessPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        JKNetwork.shared.server = "http://127.0.0.1:3000"
-        JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
-     
         handleKeyboardVisibility()
         handleKeyboardOffset()
     }
@@ -47,9 +44,9 @@ class AuthentificationViewController: UIViewController {
     }
 
     @IBAction func loginBusiness(_ sender: Any) {
-        if let name = businessName.text,
+        if let email = businessEmail.text,
             let password = businessPassword.text {
-            JKMediator.logBusiness(name: name, password: password, success: { business in
+            JKMediator.logBusiness(email: email, password: password, success: { business in
                 JKSession.shared.business = business
                 
                 let vc = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController

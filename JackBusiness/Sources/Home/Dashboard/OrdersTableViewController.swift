@@ -20,16 +20,16 @@ class OrdersTableViewController: ATableViewController {
 
     override var cellIdentifiers: [ARowType: String] {
         return [
-            .header: "PlaceHeaderCell",
-            .section: "CategoryCell",
+            .header: "",
+            .section: "",
             .row: "OrderTableCell",
         ]
     }
     
     override var cellHeights: [ARowType: CGFloat] {
         return [
-            .header: 250,
-            .section: 40,
+            .header: 0,
+            .section: 0,
             .row: 70,
         ]
     }
@@ -50,8 +50,11 @@ class OrdersTableViewController: ATableViewController {
     }
     
     func setUp() {
-        JKMediator.fetchBusinessOrders(id: JKSession.shared.business!.id, success: {orders in
+        self.orders = []
+        JKMediator.fetchOrders(businessId: JKSession.shared.businessId, success: { orders in
             self.orders = orders
+
+            JKUserCache.shared.loadInCache(ids: orders.map{return $0.userId})
         }, failure: {
             
         })
@@ -80,17 +83,43 @@ class OrdersTableViewController: ATableViewController {
 
 class OrderTableCell: UITableViewCell {
     
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var retrieveDate: CountdownView!
     @IBOutlet weak var countLabel: UILabel!
+    
+    @IBOutlet weak var statusLabel: UILabel!
     
     var order: JKOrder? {
         didSet {
-            if let order = order {
-                idLabel.text = String(order.id)
-                dateLabel.text = order.pickupDate.description
-                countLabel.text = String(order.productIds.count)
-            }
+            NotificationCenter.default.removeObserver(self, name: userChangedNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(userUpdated), name: userChangedNotification, object: nil)
+            NotificationCenter.default.removeObserver(self, name: orderChangedNotification, object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(orderChanged), name: orderChangedNotification, object: nil)
+            setUpOrder()
         }
     }
+
+    func setUpOrder() {
+        if let order = order {
+            nameLabel.text = "\(String(describing: JKUserCache.shared.getItem(id: order.userId)?.name ?? "-")) (\(order.id))"
+            countLabel.text = "x\(String(order.productIds.count)) produits, \(order.price)€"
+            statusLabel.text = "\(order.status.rawValue.uppercased()),\(order.state.rawValue.uppercased())"
+            
+            retrieveDate.value = order.pickupDate.minutesSinceNow()
+            retrieveDate.textColor = UIColor.darkGray
+        }
+    }
+    
+    @objc func userUpdated(notif: Notification) {
+        if let id = notif.userInfo?["id"] as? UInt, id == order?.userId, let order = order {
+            nameLabel.text = "\(String(describing: JKUserCache.shared.getItem(id: order.userId)?.name ?? "-")) (\(order.id))"
+        }
+    }
+    
+    @objc func orderChanged(notif: Notification) {
+        if let id = notif.userInfo?["id"] as? UInt, id == order?.id {
+            order = JKOrderCache.shared.getItem(id: id)
+        }
+    }
+
 }

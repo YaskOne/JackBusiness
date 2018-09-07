@@ -22,6 +22,7 @@ class StocksOverviewViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: false)
+        categoriesOverviewTable?.setUp()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

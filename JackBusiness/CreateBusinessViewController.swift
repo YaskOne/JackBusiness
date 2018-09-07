@@ -9,6 +9,7 @@
 import UIKit
 import ArtUtilities
 import GooglePlaces
+import JackModel
 
 enum RegisterBusinessFormField: Int {
     case name
@@ -17,6 +18,7 @@ enum RegisterBusinessFormField: Int {
     case type
     case description
     case url
+    case email
 }
 
 class CreateBusinessViewController: UIViewController {
@@ -27,6 +29,7 @@ class CreateBusinessViewController: UIViewController {
     @IBOutlet weak var typeLabel: AFormLabel!
     @IBOutlet weak var descriptionLabel: AFormLabel!
     @IBOutlet weak var urlLabel: AFormLabel!
+    @IBOutlet weak var emailLabel: AFormLabel!
     
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
@@ -34,15 +37,56 @@ class CreateBusinessViewController: UIViewController {
     @IBOutlet weak var typeInput: UITextField!
     @IBOutlet weak var descriptionInput: UITextField!
     @IBOutlet weak var urlInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField!
+    
+    @IBOutlet weak var cguButton: AUButton!
     
     var formFields: [RegisterBusinessFormField: AFormField] = [:]
+    
+    var validateButton: UIBarButtonItem?
+    
+    var modifing: Bool {
+        return JKSession.shared.business != nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Validate", style: .plain, target: self, action: #selector(validateTapped))
+        validateButton = UIBarButtonItem(title: AULocalized.string("validate_action"), style: .plain, target: self, action: #selector(validateTapped))
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.rightBarButtonItem = validateButton
+        
+        handleKeyboardVisibility()
+        createFormFields()
+        setUpFormFields()
+    }
+    
+    @IBOutlet weak var passwordHeightConstrain: NSLayoutConstraint!
+    
+    func setUpFormFields() {
+//        passwordHeightConstrain.constant = modifing ? 0 : 80
+        cguButton.isHidden = modifing
+        
+        guard let business = JKSession.shared.business else {
+            return
+        }
+        
+        nameInput.text = business.name
+        addressInput.text = business.address
+        typeInput.text = business.type
+        descriptionInput.text = business.description
+        urlInput.text = business.url
+        emailInput.text = business.email
+        
+        for field in formFields {
+            field.value.checkFieldStatus()
+        }
+        
+        formFields[.password]?.formStatus = .valid
+    }
+    
+    func createFormFields() {
         formFields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
             return self.nameInput.text != "" ? FormStatus.valid : FormStatus.invalid
         }
@@ -51,6 +95,9 @@ class CreateBusinessViewController: UIViewController {
         }
         formFields[.address] = AFormField(input: addressInput, label: addressLabel, defaultValue: "") {
             return self.addressInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        formFields[.email] = AFormField(input: emailInput, label: emailLabel, defaultValue: "") {
+            return self.emailInput.text != "" ? FormStatus.valid : FormStatus.invalid
         }
         formFields[.type] = AFormField(input: typeInput, label: typeLabel, defaultValue: "") {
             return self.typeInput.text != "" ? FormStatus.valid : FormStatus.invalid
@@ -71,6 +118,16 @@ class CreateBusinessViewController: UIViewController {
         present(autocompleteController, animated: true, completion: nil)
     }
     
+    @IBAction func acceptCguTapped(_ sender: Any) {
+        cguButton.isSelected = !cguButton.isSelected
+        cguButton.borderColor = cguButton.isSelected ? UIColor.green : UIColor.darkGray
+        cguButton.titleLabel?.textColor = cguButton.isSelected ? UIColor.green : UIColor.darkGray
+    }
+    
+    @IBAction func cguTapped(_ sender: Any) {
+        navigationController?.pushViewController(homeStoryboard.instantiateViewController(withIdentifier: "CGU"), animated: true)
+    }
+    
     @objc func validateTapped() {
         for field in formFields {
             if field.value.formStatus == .invalid
@@ -78,12 +135,28 @@ class CreateBusinessViewController: UIViewController {
                 return
             }
         }
+        if !modifing && !cguButton.isSelected {
+            return
+        }
         
-        JKMediator.createBusiness(name: nameInput.text!, password: passwordInput.text!, address: addressInput.text!, type: typeInput.text!, description: descriptionInput.text!, url: urlInput.text!, success: { (id) in
-            self.navigationController?.popViewController(animated: true)
-        }, failure: {
-            
-        })
+        validateButton?.isEnabled = false
+        
+        if !modifing {
+            JKMediator.createBusiness(email: emailInput.text!, name: nameInput.text!, password: passwordInput.text!, address: addressInput.text!, type: typeInput.text!, description: descriptionInput.text!, url: urlInput.text!, success: { (id) in
+                self.navigationController?.popViewController(animated: true)
+                self.validateButton?.isEnabled = true
+            }, failure: {
+                self.validateButton?.isEnabled = true
+            })
+        }
+        else {
+            JKMediator.updateBusiness(id: JKSession.shared.businessId, email: emailInput.text, name: nameInput.text, password: passwordInput.text, address: addressInput.text, type: typeInput.text, description: descriptionInput.text, url: urlInput.text, success: {
+                self.navigationController?.popViewController(animated: true)
+                self.validateButton?.isEnabled = true
+            }, failure: {
+                self.validateButton?.isEnabled = true
+            })
+        }
         
     }
 }

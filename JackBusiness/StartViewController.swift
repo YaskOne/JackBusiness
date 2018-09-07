@@ -17,8 +17,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        JKNetwork.shared.server = "http://127.0.0.1:3000"
-        JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
         
         let transition: CATransition = CATransition()
         transition.duration = 0.5
@@ -26,7 +24,7 @@ class StartViewController: UIViewController {
         transition.type = kCATransitionFade
         self.navigationController!.view.layer.add(transition, forKey: nil)
         
-        if !JKSession.shared.active {
+        if JKSession.shared.businessId == 0 {
             let controller = authStoryboard.instantiateViewController(withIdentifier: "AuthentificationViewController")
             navigationController?.pushViewController(controller, animated: false)
         } else {

@@ -8,6 +8,7 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 enum RegisterProductFormField: Int {
     case name
@@ -32,6 +33,9 @@ class CreateProductViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    var categoryTable: CategoriesOverviewTableViewController?
+    var categoryId: UInt = 0
+    
     lazy var formFields: [RegisterProductFormField: AFormField] = {
         var fields: [RegisterProductFormField: AFormField] = [:]
         fields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
@@ -47,11 +51,15 @@ class CreateProductViewController: UIViewController {
         return fields
     }()
     
+    var validateButton: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Validate", style: .plain, target: self, action: #selector(validateTapped))
+
+        validateButton = UIBarButtonItem(title: AULocalized.string("validate_action"), style: .plain, target: self, action: #selector(validateTapped))
+        navigationItem.rightBarButtonItem = validateButton
         
         print(formFields.count)
         handleKeyboardVisibility()
@@ -62,6 +70,12 @@ class CreateProductViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func selectCategoryTapped(_ sender: Any) {
+        categoryTable = homeStoryboard.instantiateViewController(withIdentifier: "CategoriesOverviewTableViewController") as? CategoriesOverviewTableViewController
+        categoryTable?.delegate = self
+        self.navigationController?.pushViewController(categoryTable!, animated: true)
+    }
+    
     @objc func validateTapped() {
         for field in formFields {
             if field.value.formStatus == .invalid
@@ -69,10 +83,29 @@ class CreateProductViewController: UIViewController {
                 return
             }
         }
-        JKMediator.createProduct(name: nameInput.text!, price: Int(priceInput.text!) ?? 1, category: Int(categoryInput.text!) ?? 1, url: urlInput.text!, businessId: JKSession.shared.business!.id, success: { (_) in
-            self.navigationController?.popViewController(animated: true)
-            
-        }, failure: {})
+        guard let text = priceInput.text else {
+            return
+        }
+        let price = ((text.replacingOccurrences(of: ",", with: ".") as NSString).floatValue * 100).rounded() / 100
         
+        self.validateButton?.isEnabled = false
+        JKMediator.createProduct(name: nameInput.text!, price: price, category: categoryId, url: urlInput.text!, businessId: JKSession.shared.business!.id, success: { (_) in
+            self.navigationController?.popViewController(animated: true)
+            self.validateButton?.isEnabled = true
+        }, failure: {
+            self.validateButton?.isEnabled = true
+        })
+        
+    }
+}
+
+extension CreateProductViewController: CategorySelectedDelegate {
+    func categorySelected(category: JKCategory) {
+        categoryTable?.navigationController?.popViewController(animated: true)
+        
+        categoryInput.text = category.name
+        categoryId = category.id
+        
+        formFields[.category]?.checkFieldStatus()
     }
 }

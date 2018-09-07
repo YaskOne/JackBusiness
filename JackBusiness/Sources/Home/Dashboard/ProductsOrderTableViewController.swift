@@ -24,7 +24,7 @@ class ProductsOrderTableViewController: ATableViewController {
         return [
             .header: 250,
             .section: 40,
-            .row: 70,
+            .row: 50,
         ]
     }
 
@@ -82,12 +82,13 @@ class ProductsOrderTableViewController: ATableViewController {
 
 class OrderProductTableCell: UITableViewCell {
     
-    @IBOutlet weak var productImageView: AImageView?
+    @IBOutlet weak var productImageView: AUImageView?
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var priceView: PriceLabel?
     
     var product: JKProduct? {
         didSet {
+            clearFields()
             if let product = product {
                 nameLabel?.text = product.name
                 priceView?.price = product.price
@@ -99,5 +100,11 @@ class OrderProductTableCell: UITableViewCell {
                 }
             }
         }
+    }
+    
+    func clearFields() {
+        productImageView?.image = nil
+        nameLabel?.text = nil
+        priceView?.text = nil
     }
 }

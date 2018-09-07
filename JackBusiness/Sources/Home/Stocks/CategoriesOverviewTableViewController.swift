@@ -50,9 +50,11 @@ class CategoriesOverviewTableViewController: ATableViewController {
     }
     
     func setUp() {
-        JKMediator.fetchCategories(businessId: JKSession.shared.business?.id, success: { categories in
-            self.categories = categories
-        }, failure: {})
+        if let id = JKSession.shared.business?.id {
+            JKMediator.fetchCategories(businessId: id, success: { categories in
+                self.categories = categories
+            }, failure: {})
+        }
     }
     
     override func setUpRow(item: ATableViewRow, indexPath: IndexPath) -> UITableViewCell {

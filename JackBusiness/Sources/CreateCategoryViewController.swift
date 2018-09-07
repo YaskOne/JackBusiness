@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import ArtUtilities
 
 class CreateCategoryViewController: UIViewController {
 
     @IBOutlet weak var nameInput: UITextField!
+    var validateButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        validateButton = UIBarButtonItem(title: AULocalized.string("validate_action"), style: .plain, target: self, action: #selector(validateTapped))
+        navigationItem.rightBarButtonItem = validateButton
+        
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Validate", style: .plain, target: self, action: #selector(validateTapped))
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,10 +31,14 @@ class CreateCategoryViewController: UIViewController {
     
     @objc func validateTapped() {
         if nameInput.text != nil && nameInput.text != "" {
+            validateButton?.isEnabled = false
             JKMediator.createCategory(name: nameInput.text!, businessId: JKSession.shared.business!.id, success: { (_) in
                 
                 self.navigationController?.popViewController(animated: true)
-            }, failure: {})
+                self.validateButton?.isEnabled = true
+            }, failure: {
+                self.validateButton?.isEnabled = true
+            })
         }
         
     }

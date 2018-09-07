@@ -36,6 +36,7 @@
 		D7CBA040212D73950030AADC /* ProductsOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CBA03F212D73950030AADC /* ProductsOrderTableViewController.swift */; };
 		D7CBA042212D74580030AADC /* OrderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CBA041212D74580030AADC /* OrderTableCell.xib */; };
 		D7CBA044212D74720030AADC /* OrderProductTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7CBA043212D74720030AADC /* OrderProductTableCell.xib */; };
+		D7CDEB6C213FD88C00D97758 /* JKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CDEB6B213FD88C00D97758 /* JKWebViewController.swift */; };
 		D7F0AFCE212DCD31005302CF /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFCD212DCD31005302CF /* Home.storyboard */; };
 		D7F0AFD2212DCF3D005302CF /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0AFD1212DCF3D005302CF /* StartViewController.swift */; };
 		D7F0AFD5212DD1D0005302CF /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFD4212DD1D0005302CF /* Authentification.storyboard */; };
@@ -47,6 +48,7 @@
 		D7F0AFE62132B8EB005302CF /* CategoryOverviewTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F0AFE52132B8EB005302CF /* CategoryOverviewTableCell.xib */; };
 		D7F0B8C720F643E0003765A3 /* CreateProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0B8C620F643E0003765A3 /* CreateProductViewController.swift */; };
 		D7F0B8CF20F648A3003765A3 /* CreateCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F0B8CE20F648A3003765A3 /* CreateCategoryViewController.swift */; };
+		D7F18B09213C25F700A7BD9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7F18B0B213C25F700A7BD9B /* Localizable.strings */; };
 		D7F8820820F34FB900B2F7EE /* JackModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D767ECEC20F34F270059A370 /* JackModel.framework */; };
 		D7F8820920F34FB900B2F7EE /* JackModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D767ECEC20F34F270059A370 /* JackModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D7F8821620F356E500B2F7EE /* JKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F8821520F356E500B2F7EE /* JKSession.swift */; };
@@ -164,6 +166,7 @@
 		D7CBA03F212D73950030AADC /* ProductsOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsOrderTableViewController.swift; sourceTree = "<group>"; };
 		D7CBA041212D74580030AADC /* OrderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableCell.xib; sourceTree = "<group>"; };
 		D7CBA043212D74720030AADC /* OrderProductTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderProductTableCell.xib; sourceTree = "<group>"; };
+		D7CDEB6B213FD88C00D97758 /* JKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKWebViewController.swift; sourceTree = "<group>"; };
 		D7F0AFCD212DCD31005302CF /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D7F0AFD1212DCF3D005302CF /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D7F0AFD4212DD1D0005302CF /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentification.storyboard; sourceTree = "<group>"; };
@@ -175,6 +178,10 @@
 		D7F0AFE52132B8EB005302CF /* CategoryOverviewTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryOverviewTableCell.xib; sourceTree = "<group>"; };
 		D7F0B8C620F643E0003765A3 /* CreateProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProductViewController.swift; sourceTree = "<group>"; };
 		D7F0B8CE20F648A3003765A3 /* CreateCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryViewController.swift; sourceTree = "<group>"; };
+		D7F18AEF213C055500A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		D7F18AF0213C055600A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D7F18B0A213C25F700A7BD9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D7F18B0C213C25FF00A7BD9B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D7F8821520F356E500B2F7EE /* JKSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKSession.swift; sourceTree = "<group>"; };
 		D7F8821720F3A2B700B2F7EE /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -324,6 +331,7 @@
 				D7CB807E20EE444300F69E54 /* LaunchScreen.storyboard */,
 				D7CB808120EE444300F69E54 /* Info.plist */,
 				D771434C20EF8A9B0025E081 /* AddressSelectViewController.swift */,
+				D7F18B0B213C25F700A7BD9B /* Localizable.strings */,
 				D771435820F006800025E081 /* CreateBusinessViewController.swift */,
 			);
 			path = JackBusiness;
@@ -376,6 +384,7 @@
 				D7CBA03C212D734A0030AADC /* Dashboard */,
 				D7F0AFD8212EBE3F005302CF /* HomeViewController.swift */,
 				D7F0AFCD212DCD31005302CF /* Home.storyboard */,
+				D7CDEB6B213FD88C00D97758 /* JKWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -500,6 +509,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = D7CB806920EE444100F69E54;
 			productRefGroup = D7CB807320EE444100F69E54 /* Products */;
@@ -567,6 +577,7 @@
 				D771436B20F0CF760025E081 /* jackfont.ttf in Resources */,
 				D771436820F0CF700025E081 /* Jack_logo_main@3x.png in Resources */,
 				D7CB807D20EE444300F69E54 /* Assets.xcassets in Resources */,
+				D7F18B09213C25F700A7BD9B /* Localizable.strings in Resources */,
 				D7CBA044212D74720030AADC /* OrderProductTableCell.xib in Resources */,
 				D771434520EF777B0025E081 /* Podfile in Resources */,
 				D771436520F0CF700025E081 /* Jack_logo_main.png in Resources */,
@@ -679,6 +690,7 @@
 			files = (
 				D771434220EF77440025E081 /* JKNetwork.swift in Sources */,
 				D7F0AFD2212DCF3D005302CF /* StartViewController.swift in Sources */,
+				D7CDEB6C213FD88C00D97758 /* JKWebViewController.swift in Sources */,
 				D7F0AFE22132B6FD005302CF /* ProductsOverviewTableViewController.swift in Sources */,
 				D7CBA03E212D73680030AADC /* OrdersTableViewController.swift in Sources */,
 				D7CB807820EE444200F69E54 /* AuthentificationViewController.swift in Sources */,
@@ -746,6 +758,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D7CB807A20EE444200F69E54 /* Base */,
+				D7F18AEF213C055500A7BD9B /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -754,8 +767,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D7CB807F20EE444300F69E54 /* Base */,
+				D7F18AF0213C055600A7BD9B /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D7F18B0B213C25F700A7BD9B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7F18B0A213C25F700A7BD9B /* en */,
+				D7F18B0C213C25FF00A7BD9B /* fr */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -766,6 +789,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -827,6 +851,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -883,16 +908,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
 				INFOPLIST_FILE = JackBusiness/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusiness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -904,16 +932,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YNRL7XBC56;
 				INFOPLIST_FILE = JackBusiness/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jack-world.JackBusiness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

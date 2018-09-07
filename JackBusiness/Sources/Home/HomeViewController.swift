@@ -9,6 +9,8 @@
 import UIKit
 import ArtUtilities
 
+let changePageNotification = Notification.Name("changePageNotification")
+
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var statsButton: UIButton!
@@ -43,6 +45,8 @@ class HomeViewController: UIViewController {
         
         topConstraint.constant = UIApplication.shared.statusBarFrame.height
         currentPage = 1
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pageChangedHandler), name: changePageNotification, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,6 +75,12 @@ class HomeViewController: UIViewController {
     
     @IBAction func shopTapped(_ sender: Any) {
         currentPage = 2
+    }
+    
+    @objc func pageChangedHandler(notif: Notification) {
+        if let page = notif.userInfo?["page"] as? Int {
+            currentPage = page
+        }
     }
     
 }

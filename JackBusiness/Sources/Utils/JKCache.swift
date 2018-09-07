@@ -9,7 +9,18 @@
 import Foundation
 import JackModel
 
+let businessChangedNotification = Notification.Name("businessChangedNotification")
+let productChangedNotification = Notification.Name("productChangedNotification")
+let userChangedNotification = Notification.Name("userChangedNotification")
+let orderChangedNotification = Notification.Name("orderChangedNotification")
+
 open class JKBusinessCache: JKIdCache {
+    
+    public override init() {
+        super.init()
+        
+        notification = businessChangedNotification
+    }
     
     public static let shared: JKBusinessCache = JKBusinessCache()
     
@@ -61,5 +72,43 @@ open class JKCategoryCache: JKIdCache {
                 self.addObject(id: category.id, object: category)
             }
         }, failure: {})
+    }
+}
+open class JKUserCache: JKIdCache {
+    
+    public override init() {
+        super.init()
+        
+        notification = userChangedNotification
+    }
+    
+    public static let shared: JKUserCache = JKUserCache()
+    
+    public func getItem(id: UInt) -> JKUser? {
+        return cache[id]?.object as? JKUser
+    }
+    
+    public func loadInCache(ids: [UInt]) {
+        let newIds = removeKnownIds(ids: ids)
+        
+        JKMediator.fetchUsers(ids: newIds, success: { users in
+            for user in users {
+                self.addObject(id: user.id, object: user)
+            }
+        }, failure: {})
+    }
+}
+open class JKOrderCache: JKIdCache {
+    
+    public static let shared: JKOrderCache = JKOrderCache()
+    
+    public func getItem(id: UInt) -> JKOrder? {
+        return cache[id]?.object as? JKOrder
+    }
+    
+    public override init() {
+        super.init()
+        
+        notification = orderChangedNotification
     }
 }

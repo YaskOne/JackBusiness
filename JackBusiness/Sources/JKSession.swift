@@ -11,25 +11,47 @@ import JackModel
 
 class JKSession {
     
+    let defaults: UserDefaults = {
+        return UserDefaults.standard
+    }()
+    
     lazy var userDefaults: UserDefaults = {
         return UserDefaults.standard
     }()
     
     static let shared: JKSession = JKSession()
     
-    var business: JKBusiness?
-    
-    var active: Bool {
-        return business != nil
+    var businessId: UInt = 0
+    var business: JKBusiness? {
+        get {
+            return JKBusinessCache.shared.getItem(id: businessId)
+        }
+        set {
+            if let newValue = newValue {
+                businessId = newValue.id
+                JKBusinessCache.shared.addObject(id: newValue.id, object: newValue)
+            }
+        }
     }
     
-    func restore() {
-//        business = userDefaults.object(forKey: JKKeys.business) as? JKBusiness
+    func startSession() {
+        if let id = defaults.object(forKey: JKKeys.businessId) as? UInt, id != 0 {
+            businessId = id
+            loadBusiness()
+        }
     }
     
-    func save() {
-//        if let business = business {
-//            userDefaults.set(business, forKey: JKKeys.business)
-//        }
+    func saveSession() {
+        defaults.set(businessId, forKey: JKKeys.businessId)
+    }
+    
+    func closeSession() {
+        JKBusinessCache.shared.removeObject(id: businessId)
+        defaults.set(0, forKey: JKKeys.businessId)
+        businessId = 0
+    }
+    
+    func loadBusiness() {
+        JKBusinessCache.shared.loadInCache(ids: [businessId])
     }
 }

@@ -35,16 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
         GMSServices.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
         GMSPlacesClient.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
 
-        JKSession.shared.restore()
+        JKNetwork.shared.server = "http://127.0.0.1:3000"
+        JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
+        
+        JKSession.shared.startSession()
         
         return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        JKSession.shared.save()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -56,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInterac
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        JKSession.shared.save()
+        JKSession.shared.saveSession()
     }
 
 
