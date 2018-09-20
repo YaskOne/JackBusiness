@@ -24,7 +24,7 @@ class ProductsOverviewTableViewController: ATableViewController {
         return [
             .header: 250,
             .section: 40,
-            .row: 50,
+            .row: 106,
         ]
     }
     
@@ -81,7 +81,7 @@ class ProductsOverviewTableViewController: ATableViewController {
     
 }
 
-class ProductOverviewTableCell: UITableViewCell {
+class ProductOverviewTableCell: AUTableViewCell {
     
     @IBOutlet weak var productImageView: AUImageView?
     @IBOutlet weak var nameLabel: UILabel?
@@ -91,6 +91,7 @@ class ProductOverviewTableCell: UITableViewCell {
         didSet {
             clearFields()
             if let product = product {
+                setUp()
                 nameLabel?.text = product.name
                 priceView?.price = product.price
                 if product.url != "" {
@@ -103,10 +104,32 @@ class ProductOverviewTableCell: UITableViewCell {
         }
     }
     
+    @IBAction func actionTapped(_ sender: Any) {
+        guard let product = product else {
+            return
+        }
+        AUAlertController.shared.complexAlertController(UIApplication.topViewController()!, title: "Que voulez vous faire?", message: "", actions: [
+        AlertAction.init(title: "Modifier") {
+            var vc = homeStoryboard.instantiateViewController(withIdentifier: "CreateProductViewController") as! CreateProductViewController
+            
+            vc.product = self.product
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        },
+        AlertAction.init(title: "Supprimer", style: .destructive) {
+            JKMediator.deleteItem(productId: product.id, success: {}, failure: {})
+        },
+        AlertAction.init(title: "Annuler", style: .cancel) {
+            
+        },
+        ], preferredStyle: .actionSheet)
+    }
     
     func clearFields() {
         productImageView?.image = nil
         nameLabel?.text = nil
         priceView?.text = nil
+    }
+    
+    open override func updateCellSelection() {
     }
 }

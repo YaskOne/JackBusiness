@@ -24,7 +24,7 @@ class ProductsOrderTableViewController: ATableViewController {
         return [
             .header: 250,
             .section: 40,
-            .row: 50,
+            .row: 96,
         ]
     }
 

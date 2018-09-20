@@ -15,8 +15,6 @@ protocol OrderSelectDelegate {
 }
 
 class OrdersTableViewController: ATableViewController {
-    
-    var delegate: OrderSelectDelegate?
 
     override var cellIdentifiers: [ARowType: String] {
         return [
@@ -30,7 +28,7 @@ class OrdersTableViewController: ATableViewController {
         return [
             .header: 0,
             .section: 0,
-            .row: 70,
+            .row: 80,
         ]
     }
     
@@ -51,13 +49,6 @@ class OrdersTableViewController: ATableViewController {
     
     func setUp() {
         self.orders = []
-        JKMediator.fetchOrders(businessId: JKSession.shared.businessId, success: { orders in
-            self.orders = orders
-
-            JKUserCache.shared.loadInCache(ids: orders.map{return $0.userId})
-        }, failure: {
-            
-        })
     }
 
     override func setUpRow(item: ATableViewRow, indexPath: IndexPath) -> UITableViewCell {
@@ -67,27 +58,22 @@ class OrdersTableViewController: ATableViewController {
         
         if let cell = cell as? OrderTableCell, let order = item.object as? JKOrder {
             cell.order = order
+            cell.delegate = self
         }
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let order = (itemAtIndex(indexPath).object as? JKOrder) else {
-            return
-        }
-        
-        delegate?.orderSelected(order: order)
     }
     
 }
 
-class OrderTableCell: UITableViewCell {
+class OrderTableCell: AUTableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var retrieveDate: CountdownView!
     @IBOutlet weak var countLabel: UILabel!
     
     @IBOutlet weak var statusLabel: UILabel!
+    
+    @IBOutlet weak var background: AShadowView!
     
     var order: JKOrder? {
         didSet {
@@ -96,6 +82,7 @@ class OrderTableCell: UITableViewCell {
             NotificationCenter.default.removeObserver(self, name: orderChangedNotification, object: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(orderChanged), name: orderChangedNotification, object: nil)
             setUpOrder()
+            setUp()
         }
     }
 
@@ -103,7 +90,8 @@ class OrderTableCell: UITableViewCell {
         if let order = order {
             nameLabel.text = "\(String(describing: JKUserCache.shared.getItem(id: order.userId)?.name ?? "-")) (\(order.id))"
             countLabel.text = "x\(String(order.productIds.count)) produits, \(order.price)€"
-            statusLabel.text = "\(order.status.rawValue.uppercased()),\(order.state.rawValue.uppercased())"
+            statusLabel.text = "\(order.status.description.uppercased())"
+            statusLabel.textColor = order.status.color
             
             retrieveDate.value = order.pickupDate.minutesSinceNow()
             retrieveDate.textColor = UIColor.darkGray
@@ -122,4 +110,17 @@ class OrderTableCell: UITableViewCell {
         }
     }
 
+    open override func updateCellSelection() {
+    }
+}
+
+extension OrdersTableViewController: AUCellSelectedDelegate {
+    func cellSelected(cell: AUTableViewCell) {
+        if let cell = cell as? OrderTableCell,
+            let vc = homeStoryboard.instantiateViewController(withIdentifier: "OrderOverviewViewController") as? OrderOverviewViewController {
+            
+             vc.order = cell.order
+            UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

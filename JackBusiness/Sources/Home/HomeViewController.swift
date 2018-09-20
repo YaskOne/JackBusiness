@@ -17,8 +17,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dashboardButton: UIButton!
     @IBOutlet weak var shopButton: UIButton!
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
-    
     var menu: [UIButton] {
         return [
             statsButton,
@@ -34,19 +32,18 @@ class HomeViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        currentPage = 1
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pageChangedHandler), name: changePageNotification, object: nil)
+    }
+    
     var pageViewController: AUPageViewController? {
         didSet {
             pageViewController?.pageDelegate = self
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        topConstraint.constant = UIApplication.shared.statusBarFrame.height
-        currentPage = 1
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.pageChangedHandler), name: changePageNotification, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,6 +62,13 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @objc func pageChangedHandler(notif: Notification) {
+        if let page = notif.userInfo?["page"] as? Int {
+            currentPage = page
+        }
+    }
+    
+    
     @IBAction func statsTapped(_ sender: Any) {
         currentPage = 0
     }
@@ -76,13 +80,6 @@ class HomeViewController: UIViewController {
     @IBAction func shopTapped(_ sender: Any) {
         currentPage = 2
     }
-    
-    @objc func pageChangedHandler(notif: Notification) {
-        if let page = notif.userInfo?["page"] as? Int {
-            currentPage = page
-        }
-    }
-    
 }
 
 extension HomeViewController: AUPageViewControllerDelegate {

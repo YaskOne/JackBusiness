@@ -19,50 +19,58 @@ enum RegisterProductFormField: Int {
 
 class CreateProductViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: AFormLabel!
-    @IBOutlet weak var nameInput: UITextField!
-    
-    @IBOutlet weak var priveLabel: AFormLabel!
-    @IBOutlet weak var priceInput: UITextField!
-    
-    @IBOutlet weak var categoryLabel: AFormLabel!
-    @IBOutlet weak var categoryInput: UITextField!
-    
-    @IBOutlet weak var urlLabel: AFormLabel!
-    @IBOutlet weak var urlInput: UITextField!
+    @IBOutlet weak var nameInput: AUFormLabeledField!
+    @IBOutlet weak var priceInput: AUFormLabeledField!
+    @IBOutlet weak var categoryInput: AUFormLabeledField!
+    @IBOutlet weak var urlInput: AUFormLabeledField!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var navigationBar: AUNavigationBar!
     
-    var categoryTable: CategoriesOverviewTableViewController?
+    var product: JKProduct?
+    
+    var categoryTable: CategoriesTableViewController?
     var categoryId: UInt = 0
     
-    lazy var formFields: [RegisterProductFormField: AFormField] = {
-        var fields: [RegisterProductFormField: AFormField] = [:]
-        fields[.name] = AFormField(input: nameInput, label: nameLabel, defaultValue: "") {
-            return self.nameInput.text != "" ? FormStatus.valid : FormStatus.invalid
-        }
-        fields[.price] = AFormField(input: priceInput, label: priveLabel, defaultValue: "") {
-            return self.priceInput.text != "" ? FormStatus.valid : FormStatus.invalid
-        }
-        fields[.category] = AFormField(input: categoryInput, label: categoryLabel, defaultValue: "") {
-            return self.categoryInput.text != "" ? FormStatus.valid : FormStatus.invalid
-        }
-        fields[.url] = AFormField(input: urlInput, label: urlLabel, defaultValue: "", mandatory: false)
-        return fields
-    }()
-    
-    var validateButton: UIBarButtonItem?
+    var formFields: [AUFormLabeledField] {
+        return   [
+            self.nameInput,
+            priceInput,
+            categoryInput,
+            urlInput
+        ]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.setNavigationBarHidden(false, animated: false)
-
-        validateButton = UIBarButtonItem(title: AULocalized.string("validate_action"), style: .plain, target: self, action: #selector(validateTapped))
-        navigationItem.rightBarButtonItem = validateButton
+        navigationBar.rightAction = {
+            self.validateTapped()
+        }
         
-        print(formFields.count)
+        nameInput.initialize() {
+            return self.nameInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        priceInput.initialize() {
+            return self.priceInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        categoryInput.initialize() {
+            return self.categoryInput.text != "" ? FormStatus.valid : FormStatus.invalid
+        }
+        urlInput.initialize(mandatory: false)
+        
+        setUpProduct()
         handleKeyboardVisibility()
+    }
+    
+    func setUpProduct() {
+        guard let product = product else {
+            return
+        }
+        nameInput.text = product.name
+        priceInput.text = product.price.description
+        categoryInput.text = JKCategoryCache.shared.getItem(id: product.categoryId)?.name ?? ""
+        nameInput.text = product.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,15 +79,15 @@ class CreateProductViewController: UIViewController {
     }
     
     @IBAction func selectCategoryTapped(_ sender: Any) {
-        categoryTable = homeStoryboard.instantiateViewController(withIdentifier: "CategoriesOverviewTableViewController") as? CategoriesOverviewTableViewController
+        categoryTable = homeStoryboard.instantiateViewController(withIdentifier: "CategoriesTableViewController") as? CategoriesTableViewController
         categoryTable?.delegate = self
         self.navigationController?.pushViewController(categoryTable!, animated: true)
     }
     
     @objc func validateTapped() {
         for field in formFields {
-            if field.value.formStatus == .invalid
-                || (field.value.formStatus == .none && field.value.mandatory) {
+            if field.formStatus == .invalid
+                || (field.formStatus == .none && field.mandatory) {
                 return
             }
         }
@@ -88,24 +96,36 @@ class CreateProductViewController: UIViewController {
         }
         let price = ((text.replacingOccurrences(of: ",", with: ".") as NSString).floatValue * 100).rounded() / 100
         
-        self.validateButton?.isEnabled = false
-        JKMediator.createProduct(name: nameInput.text!, price: price, category: categoryId, url: urlInput.text!, businessId: JKSession.shared.business!.id, success: { (_) in
-            self.navigationController?.popViewController(animated: true)
-            self.validateButton?.isEnabled = true
-        }, failure: {
-            self.validateButton?.isEnabled = true
-        })
+        self.navigationBar.leftButton.isEnabled = false
+        if product == nil {
+            JKMediator.createProduct(name: nameInput.text!, price: price, category: categoryId, url: urlInput.text!, businessId: JKSession.shared.business!.id, success: { (_) in
+                self.navigationController?.popViewController(animated: true)
+                self.navigationBar.leftButton.isEnabled = true
+            }, failure: {
+                self.navigationBar.leftButton.isEnabled = true
+            })
+        } else {
+            JKMediator.updateProduct(id: product!.id, name: nameInput.text!, price: price, category: categoryId, url: urlInput.text!, success: {
+                self.navigationController?.popViewController(animated: true)
+                self.navigationBar.leftButton.isEnabled = true
+            }, failure: {
+                self.navigationBar.leftButton.isEnabled = true
+            })
+        }
         
     }
 }
 
-extension CreateProductViewController: CategorySelectedDelegate {
+extension CreateProductViewController: AUCellSelectedDelegate {
+    func cellSelected(cell: AUTableViewCell) {
+        if let category = (cell as? CategoryOverviewTableCell)?.category {
+            categoryTable?.navigationController?.popViewController(animated: true)
+            
+            categoryInput.text = category.name
+            categoryId = category.id
+        }
+    }
+    
     func categorySelected(category: JKCategory) {
-        categoryTable?.navigationController?.popViewController(animated: true)
-        
-        categoryInput.text = category.name
-        categoryId = category.id
-        
-        formFields[.category]?.checkFieldStatus()
     }
 }

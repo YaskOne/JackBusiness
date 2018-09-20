@@ -30,6 +30,7 @@ class StartViewController: UIViewController {
         } else {
             let controller = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController")
             navigationController?.pushViewController(controller, animated: false)
+            NotificationCenter.default.post(name: businessLoggedNotification, object: nil, userInfo: nil)
         }
     }
 

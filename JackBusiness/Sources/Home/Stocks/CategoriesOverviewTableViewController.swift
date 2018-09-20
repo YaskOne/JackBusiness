@@ -10,13 +10,27 @@ import UIKit
 import JackModel
 import ArtUtilities
 
-protocol CategorySelectedDelegate {
-    func categorySelected(category: JKCategory)
+class CategoriesTableViewController: CategoriesOverviewTableViewController {
+    override var cellIdentifiers: [ARowType: String] {
+        return [
+            .header: "",
+            .section: "",
+            .row: "CategoryTableCell",
+        ]
+    }
+    
+    override var cellHeights: [ARowType: CGFloat] {
+        return [
+            .header: 250,
+            .section: 40,
+            .row: 46,
+        ]
+    }
 }
 
 class CategoriesOverviewTableViewController: ATableViewController {
     
-    var delegate: CategorySelectedDelegate?
+    var delegate: AUCellSelectedDelegate?
     
     override var cellIdentifiers: [ARowType: String] {
         return [
@@ -30,7 +44,7 @@ class CategoriesOverviewTableViewController: ATableViewController {
         return [
             .header: 250,
             .section: 40,
-            .row: 40,
+            .row: 81,
         ]
     }
     
@@ -62,29 +76,51 @@ class CategoriesOverviewTableViewController: ATableViewController {
         
         if let cell = cell as? CategoryOverviewTableCell, let category = item.object as? JKCategory {
             cell.category = category
+            cell.delegate = delegate
         }
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let category = (itemAtIndex(indexPath).object as? JKCategory) else {
-            return
-        }
-        
-        delegate?.categorySelected(category: category)
-    }
-    
 }
 
-class CategoryOverviewTableCell: UITableViewCell {
+class CategoryOverviewTableCell: AUTableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var background: AShadowView!
     
     var category: JKCategory? {
         didSet {
             if let category = category {
                 self.titleLabel?.text = category.name.uppercased()
+                setUp()
             }
+        }
+    }
+    
+    @IBAction func actionsTapped(_ sender: Any) {
+        guard let category = category else {
+            return
+        }
+        AUAlertController.shared.complexAlertController(UIApplication.topViewController()!, title: "Que voulez vous faire?", message: "", actions: [
+            AlertAction.init(title: "Modifier") {
+                let vc = homeStoryboard.instantiateViewController(withIdentifier: "CreateCategoryViewController") as! CreateCategoryViewController
+                
+                vc.category = self.category
+                UIApplication.topViewController()?.navigationController?.pushViewController(vc, animated: true)
+            },
+            AlertAction.init(title: "Supprimer", style: .destructive) {
+                JKMediator.deleteItem(productId: category.id, success: {}, failure: {})
+            },
+            AlertAction.init(title: "Annuler", style: .cancel) {
+                
+            },
+            ], preferredStyle: .actionSheet)
+    }
+    
+    open override func updateCellSelection() {
+        UIView.animate(withDuration: 0.35) {
+            self.background.backgroundColor = self.cellSelected ? JKColors.deepBlue.uiColor.withAlphaComponent(0.6) : UIColor.white
+            self.titleLabel.textColor = !self.cellSelected ? JKColors.darkGray.uiColor : UIColor.white
         }
     }
 }

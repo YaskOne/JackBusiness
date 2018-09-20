@@ -6,58 +6,133 @@
 //  Copyright © 2018 Arthur Ngo Van. All rights reserved.
 //
 
+import GooglePlaces
 import UIKit
 import GoogleMaps
-import GooglePlaces
-import AWSUserPoolsSignIn
+import ArtUtilities
+import Firebase
+import UserNotifications
+import Stripe
+import AVFoundation
+
+//import FirebaseMessaging
+
+let refreshNotification = Notification.Name("refreshNotification")
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, AWSCognitoIdentityInteractiveAuthenticationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    lazy var userPool: AWSCognitoIdentityUserPool = {
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.EUWest2, identityPoolId:"eu-west-2:7f065f41-090f-4481-a50b-43677a8ee716")
-
-        let serviceConfiguration = AWSServiceConfiguration(region:.EUWest2, credentialsProvider: credentialsProvider)
-        let poolConfiguration = AWSCognitoIdentityUserPoolConfiguration.init(clientId: "1fimip5f3vvhf8ugpsjsocorpv", clientSecret: "1f8rjfbdgtfafuf4evi42vuei1gohckndp6ghn53prt2jrpu4vnr", poolId: "eu-west-2_X7xlLTAVW")
-
-        AWSServiceManager.default().defaultServiceConfiguration = serviceConfiguration
-        AWSCognitoIdentityUserPool.register(with: serviceConfiguration, userPoolConfiguration: poolConfiguration, forKey: "JackUsers")
-
-        let userPool = AWSCognitoIdentityUserPool.init(forKey: "JackUsers")
-        userPool.delegate = self
-
-        return userPool
-    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
         GMSPlacesClient.provideAPIKey("AIzaSyC2IT49iFLikS_ZU7-8HHTt8nt1GCisaO0")
 
         JKNetwork.shared.server = "http://127.0.0.1:3000"
-        JKNetwork.shared.server = "https://imb1l2wde1.execute-api.eu-west-2.amazonaws.com/Prod"
+        
+        // stage
+//        JKNetwork.shared.server = "https://7qw9g2c1q4.execute-api.eu-west-2.amazonaws.com/Prod"
+        
+        // prod
+//        JKNetwork.shared.server = "https://jq62zukmo5.execute-api.eu-west-2.amazonaws.com/Prod"
+        
+        // dev
+//        JKNetwork.shared.server = "https://dke39nk4w3.execute-api.eu-west-2.amazonaws.com/Prod"
+        
+        #if DEV
+        JKNetwork.shared.server = "https://dke39nk4w3.execute-api.eu-west-2.amazonaws.com/Prod"
+        #else
+        JKNetwork.shared.server = "https://7qw9g2c1q4.execute-api.eu-west-2.amazonaws.com/Prod"
+        #endif
         
         JKSession.shared.startSession()
         
+        AUAlertController.shared.setUpDefault(defaultOk: "validate_action", defaultCancel: "cancel_action")
+        
+        STPPaymentConfiguration.shared().publishableKey = "pk_live_T9fYUMkeD7s89195iMdOC02C"
+        
+        Messaging.messaging().delegate = self
+        FirebaseApp.configure()
+        registerForPushNotifications()
+        
         return true
     }
-
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("device token : \(deviceToken)")
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        guard let aps = userInfo["aps"] as? [String: Any],
+            let alert = aps["alert"] as? [String: Any],
+            let message = alert["body"] as? String else {
+                return
+        }
+        
+        let systemSoundID: SystemSoundID = 1016
+        
+        // to play sound
+        AudioServicesPlaySystemSound (systemSoundID)
+        
+        AUToastController.shared.toast(text: message, type: ToastType.info)
+        
+        NotificationCenter.default.post(name: refreshNotification, object: nil, userInfo: nil)
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
+        JKSession.shared.saveSession()
     }
-
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+    }
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
         JKSession.shared.saveSession()
     }
-
-
+    
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            print("Permission granted: \(granted)")
+            
+            guard granted else { return }
+            self.getNotificationSettings()
+        }
+    }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+    
+    // Push notification received
+    func application(_ application: UIApplication, didReceiveRemoteNotification data: [AnyHashable : Any]) {
+        print("PUSH NOTIFS \(data)")
+    }
 }
 
+extension AppDelegate: MessagingDelegate {
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("fcmToken \(fcmToken)")
+        JKSession.shared.fcmToken = fcmToken
+    }
+    
+}

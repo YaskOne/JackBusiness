@@ -10,11 +10,10 @@ import UIKit
 import ArtUtilities
 import GoogleMaps
 import GooglePlaces
-import AWSUserPoolsSignIn
-import AWSAuthUI
 
-class AuthentificationViewController: UIViewController {
+class AuthentificationViewController: AUViewController {
 
+    @IBOutlet weak var shadowView: AShadowView!
     @IBOutlet weak var businessEmail: UITextField!
     @IBOutlet weak var businessPassword: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -22,8 +21,11 @@ class AuthentificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        handleKeyboardVisibility()
-        handleKeyboardOffset()
+        print(view.frame.height - (shadowView.frame.origin.y + shadowView.frame.height))
+        print(view.bounds.height)
+        print(shadowView.frame.origin.y)
+        print(shadowView.frame.height)
+        self.offsetView = shadowView
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +40,14 @@ class AuthentificationViewController: UIViewController {
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
+        JKMediator.logBusiness(email: "obenj", password: "obenj", success: { business in
+            JKSession.shared.business = business
+            
+            let vc = homeStoryboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }, failure: {
+            
+        })
     }
     
     @IBAction func createBusinessTapped(_ sender: Any) {

@@ -9,6 +9,8 @@
 import Foundation
 import JackModel
 
+let businessLoggedNotification = Notification.Name("businessLoggedNotification")
+
 class JKSession {
     
     let defaults: UserDefaults = {
@@ -30,9 +32,12 @@ class JKSession {
             if let newValue = newValue {
                 businessId = newValue.id
                 JKBusinessCache.shared.addObject(id: newValue.id, object: newValue)
+                businessLogged()
             }
         }
     }
+    
+    var fcmToken: String?
     
     func startSession() {
         if let id = defaults.object(forKey: JKKeys.businessId) as? UInt, id != 0 {
@@ -53,5 +58,9 @@ class JKSession {
     
     func loadBusiness() {
         JKBusinessCache.shared.loadInCache(ids: [businessId])
+    }
+    
+    @objc func businessLogged() {
+        JKMediator.updateBusiness(id: businessId, fcmToken: fcmToken, success: {}, failure: {})
     }
 }

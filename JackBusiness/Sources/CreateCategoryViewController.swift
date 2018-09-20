@@ -8,19 +8,37 @@
 
 import UIKit
 import ArtUtilities
+import JackModel
 
 class CreateCategoryViewController: UIViewController {
 
-    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var nameInput: AUFormLabeledField?
     var validateButton: UIBarButtonItem?
+    @IBOutlet weak var navigationBar: AUNavigationBar!
+    
+    var category: JKCategory? {
+        didSet {
+            setUpCategory()
+        }
+    }
+    
+    func setUpCategory() {
+        guard let category = category else {
+            return
+        }
+        
+        nameInput?.text = category.name
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        validateButton = UIBarButtonItem(title: AULocalized.string("validate_action"), style: .plain, target: self, action: #selector(validateTapped))
-        navigationItem.rightBarButtonItem = validateButton
+        navigationBar.rightAction = {
+            self.validateTapped()
+        }
         
-        navigationController?.setNavigationBarHidden(false, animated: false)
+        setUpCategory()
+        handleKeyboardVisibility()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +48,21 @@ class CreateCategoryViewController: UIViewController {
     
     
     @objc func validateTapped() {
-        if nameInput.text != nil && nameInput.text != "" {
-            validateButton?.isEnabled = false
-            JKMediator.createCategory(name: nameInput.text!, businessId: JKSession.shared.business!.id, success: { (_) in
+        guard nameInput?.text != nil && nameInput?.text != "" else {
+            return
+        }
+        validateButton?.isEnabled = false
+        
+        if category == nil {
+            JKMediator.createCategory(name: nameInput!.text!, businessId: JKSession.shared.business!.id, success: { (_) in
+                
+                self.navigationController?.popViewController(animated: true)
+                self.validateButton?.isEnabled = true
+            }, failure: {
+                self.validateButton?.isEnabled = true
+            })
+        } else {
+            JKMediator.updateCategory(id: category!.id, name: nameInput!.text!, success: {
                 
                 self.navigationController?.popViewController(animated: true)
                 self.validateButton?.isEnabled = true
@@ -40,7 +70,6 @@ class CreateCategoryViewController: UIViewController {
                 self.validateButton?.isEnabled = true
             })
         }
-        
     }
     
 }

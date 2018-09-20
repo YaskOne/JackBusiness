@@ -8,11 +8,23 @@
 
 import UIKit
 import JackModel
+import ArtUtilities
 
 class StocksOverviewViewController: UIViewController {
 
     var categoriesOverviewTable: CategoriesOverviewTableViewController?
     var productsOverviewTable: ProductsOverviewTableViewController?
+    
+    var selectedCategoryCell: CategoryOverviewTableCell? {
+        didSet {
+            if self.selectedCategoryCell != oldValue {
+                oldValue?.cellSelected = false
+                if let id = (selectedCategoryCell as? CategoryOverviewTableCell)?.category?.id {
+                    productsOverviewTable?.categoryId = id
+                }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +52,8 @@ class StocksOverviewViewController: UIViewController {
     }
 }
 
-extension StocksOverviewViewController: CategorySelectedDelegate {
-    
-    func categorySelected(category: JKCategory) {
-        productsOverviewTable?.categoryId = category.id
+extension StocksOverviewViewController: AUCellSelectedDelegate {
+    func cellSelected(cell: AUTableViewCell) {
+        selectedCategoryCell = cell as? CategoryOverviewTableCell
     }
-    
 }

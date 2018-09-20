@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import ArtUtilities
 
 class JKNetwork {
 
@@ -45,8 +46,12 @@ class JKNetwork {
                         print("Status: \(status)")
                     }
                     if let error = json.dictionaryObject?["error"] {
-                        print("Error: \(path)")
-                        print("  - message: \(error)")
+                        AUToastController.shared.toast(text: "Error: \(error)", type: .info)
+                        print("--- ERROR: \(error)")
+                    }
+                    else if let error = json.dictionaryObject?["message"] {
+                        AUToastController.shared.toast(text: "Error: \(error)", type: .info)
+                        print("--- ERROR: \(error)")
                     }
 
                     if response.response?.statusCode != 200 {

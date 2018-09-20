@@ -6,37 +6,90 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="jackfont.ttf">
+            <string>jackfont</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryOverviewTableCell" id="HoQ-zB-Qbt" customClass="CategoryOverviewTableCell" customModule="JackBusiness" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryOverviewTableCell" rowHeight="101" id="HoQ-zB-Qbt" customClass="CategoryOverviewTableCell" customModule="JackBusiness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HoQ-zB-Qbt" id="8o4-Wn-zF6">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="100.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f11-IG-Fn3">
-                        <rect key="frame" x="5" y="5" width="360" height="33"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wsl-Lx-ewC" customClass="AShadowView" customModule="ArtUtilities">
+                        <rect key="frame" x="5" y="13" width="365" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label  rjj efiefief ef eff ef  ef e f eff e edw dw dw wwdwdw d wd wd dw dw dww dw dw]" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f11-IG-Fn3">
+                                <rect key="frame" x="5" y="5" width="355" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="E4S-fc-5NF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQ5-Ud-ocj" customClass="AUButton" customModule="ArtUtilities">
+                                <rect key="frame" x="335" y="45" width="25" height="25"/>
+                                <color key="backgroundColor" red="0.3411764706" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LQ5-Ud-ocj" secondAttribute="height" id="4Wx-7L-KgQ"/>
+                                    <constraint firstAttribute="width" secondItem="LQ5-Ud-ocj" secondAttribute="height" multiplier="1:1" id="CXV-E9-jqE"/>
+                                    <constraint firstAttribute="height" constant="25" id="Sdo-DV-8Hb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="jackfont" family="jackfont" pointSize="15"/>
+                                <state key="normal" title=""/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusRatio">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultTextColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="defaultColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionsTapped:" destination="HoQ-zB-Qbt" eventType="touchUpInside" id="8Uo-Ni-Stz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LQ5-Ud-ocj" firstAttribute="top" secondItem="f11-IG-Fn3" secondAttribute="bottom" id="LyR-Vg-uRw"/>
+                            <constraint firstItem="f11-IG-Fn3" firstAttribute="top" secondItem="Wsl-Lx-ewC" secondAttribute="top" constant="5" id="Qf2-sR-pBA"/>
+                            <constraint firstAttribute="trailing" secondItem="LQ5-Ud-ocj" secondAttribute="trailing" constant="5" id="Rfl-mg-5Eo"/>
+                            <constraint firstAttribute="trailing" secondItem="f11-IG-Fn3" secondAttribute="trailing" constant="5" id="WUd-RG-AhX"/>
+                            <constraint firstItem="f11-IG-Fn3" firstAttribute="leading" secondItem="Wsl-Lx-ewC" secondAttribute="leading" constant="5" id="dBM-7K-ZeZ"/>
+                            <constraint firstAttribute="bottom" secondItem="LQ5-Ud-ocj" secondAttribute="bottom" constant="5" id="guP-Po-q3S"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="f11-IG-Fn3" firstAttribute="leading" secondItem="8o4-Wn-zF6" secondAttribute="leading" constant="5" id="0Q9-TP-Mrd"/>
-                    <constraint firstAttribute="bottom" secondItem="f11-IG-Fn3" secondAttribute="bottom" constant="5.5" id="3Iq-qm-M76"/>
-                    <constraint firstItem="f11-IG-Fn3" firstAttribute="top" secondItem="8o4-Wn-zF6" secondAttribute="top" constant="5" id="6fs-K9-aI3"/>
-                    <constraint firstAttribute="trailing" secondItem="f11-IG-Fn3" secondAttribute="trailing" constant="10" id="f4p-8m-a3e"/>
+                    <constraint firstItem="Wsl-Lx-ewC" firstAttribute="leading" secondItem="8o4-Wn-zF6" secondAttribute="leading" constant="5" id="9VE-3b-34S"/>
+                    <constraint firstItem="Wsl-Lx-ewC" firstAttribute="centerY" secondItem="8o4-Wn-zF6" secondAttribute="centerY" id="X8V-hZ-3WW"/>
+                    <constraint firstAttribute="trailing" secondItem="Wsl-Lx-ewC" secondAttribute="trailing" constant="5" id="u92-zx-ol4"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="background" destination="Wsl-Lx-ewC" id="EX8-hg-kkq"/>
                 <outlet property="titleLabel" destination="f11-IG-Fn3" id="a6L-68-FjZ"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="190"/>
+            <point key="canvasLocation" x="33.5" y="218.5"/>
         </tableViewCell>
     </objects>
 </document>
