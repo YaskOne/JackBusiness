@@ -226,14 +226,17 @@ class BusinessDashboardViewController: UIViewController {
     
     @IBAction func newTapped(_ sender: Any) {
         currentPage = 0
+        loadOrders()
     }
     
     @IBAction func currentTapped(_ sender: Any) {
         currentPage = 1
+        loadOrders()
     }
     
     @IBAction func pastTapped(_ sender: Any) {
         currentPage = 2
+        loadOrders()
     }
 }
 

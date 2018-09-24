@@ -24,6 +24,9 @@
 		D78437532132DB3100F0C4CF /* JKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78437522132DB3100F0C4CF /* JKCache.swift */; };
 		D78B04932152FCB200FBB516 /* OrderOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7907B2152FAFD0021EC1C /* OrderOverviewViewController.swift */; };
 		D78B04962152FCB300FBB516 /* OrderOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7907B2152FAFD0021EC1C /* OrderOverviewViewController.swift */; };
+		D78B049E2153C0DC00FBB516 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B049D2153C0DC00FBB516 /* StatusViewController.swift */; };
+		D78B049F2153C0DC00FBB516 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B049D2153C0DC00FBB516 /* StatusViewController.swift */; };
+		D78B04A02153C0DC00FBB516 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78B049D2153C0DC00FBB516 /* StatusViewController.swift */; };
 		D7B4C307214694470085DED6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7B4C306214694470085DED6 /* GoogleService-Info.plist */; };
 		D7B7907C2152FAFD0021EC1C /* OrderOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B7907B2152FAFD0021EC1C /* OrderOverviewViewController.swift */; };
 		D7C00FB920EE96F000072A54 /* ArtUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7C00FB320EE950000072A54 /* ArtUtilities.framework */; };
@@ -294,6 +297,7 @@
 		D771436320F0CF700025E081 /* Jack_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Jack_logo@3x.png"; sourceTree = "<group>"; };
 		D771436A20F0CF750025E081 /* jackfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = jackfont.ttf; sourceTree = "<group>"; };
 		D78437522132DB3100F0C4CF /* JKCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKCache.swift; sourceTree = "<group>"; };
+		D78B049D2153C0DC00FBB516 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		D7B4C30321468F240085DED6 /* JackBusiness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JackBusiness.entitlements; sourceTree = "<group>"; };
 		D7B4C306214694470085DED6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7B7907B2152FAFD0021EC1C /* OrderOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderOverviewViewController.swift; sourceTree = "<group>"; };
@@ -567,6 +571,7 @@
 				D7F0AFD8212EBE3F005302CF /* HomeViewController.swift */,
 				D7F0AFCD212DCD31005302CF /* Home.storyboard */,
 				D7CDEB6B213FD88C00D97758 /* JKWebViewController.swift */,
+				D78B049D2153C0DC00FBB516 /* StatusViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1136,6 +1141,7 @@
 				D7CBA040212D73950030AADC /* ProductsOrderTableViewController.swift in Sources */,
 				D7B7907C2152FAFD0021EC1C /* OrderOverviewViewController.swift in Sources */,
 				D771434D20EF8A9B0025E081 /* AddressSelectViewController.swift in Sources */,
+				D78B049E2153C0DC00FBB516 /* StatusViewController.swift in Sources */,
 				D7F8821620F356E500B2F7EE /* JKSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,6 +1187,7 @@
 				D7F9E9862151689800B1F15F /* ProductsOrderTableViewController.swift in Sources */,
 				D78B04962152FCB300FBB516 /* OrderOverviewViewController.swift in Sources */,
 				D7F9E9872151689800B1F15F /* AddressSelectViewController.swift in Sources */,
+				D78B04A02153C0DC00FBB516 /* StatusViewController.swift in Sources */,
 				D7F9E9882151689800B1F15F /* JKSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1209,6 +1216,7 @@
 				D7F9EA222151736D00B1F15F /* ProductsOrderTableViewController.swift in Sources */,
 				D78B04932152FCB200FBB516 /* OrderOverviewViewController.swift in Sources */,
 				D7F9EA232151736D00B1F15F /* AddressSelectViewController.swift in Sources */,
+				D78B049F2153C0DC00FBB516 /* StatusViewController.swift in Sources */,
 				D7F9EA242151736D00B1F15F /* JKSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
